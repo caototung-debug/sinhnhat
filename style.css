@@ -1,0 +1,984 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#061426;
+
+    font-family:'Poppins',sans-serif;
+
+    color:#fff;
+
+    position:relative;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#05111f;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+    transition:1s;
+}
+
+.loader-circle{
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    border:4px solid rgba(255,255,255,.15);
+
+    border-top:4px solid #7eb7ff;
+
+    animation:spin 1s linear infinite;
+
+}
+
+#loading p{
+
+    margin-top:25px;
+
+    letter-spacing:3px;
+
+    color:#d9ebff;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   SKY
+========================================================= */
+
+.sky{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#244d7e 0%,#0f2747 30%,#07182f 60%,#040d18 100%);
+
+}
+
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.moon{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    top:70px;
+
+    right:120px;
+
+    background:
+
+    radial-gradient(circle,
+    #ffffff,
+    #dcecff 60%,
+    #bdd9ff);
+
+    box-shadow:
+
+    0 0 40px #ffffff,
+
+    0 0 100px rgba(170,220,255,.7),
+
+    0 0 180px rgba(90,170,255,.5);
+
+    animation:moonFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.45;
+
+    animation:starsMove 90s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(120px);
+
+    }
+
+}
+
+
+/* =========================================================
+   FOG
+========================================================= */
+
+.fog{
+
+    position:absolute;
+
+    width:220%;
+
+    height:280px;
+
+    left:-50%;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    opacity:.25;
+
+}
+
+.fog1{
+
+    bottom:180px;
+
+    background:#b6d5ff;
+
+    animation:fog1 45s linear infinite;
+
+}
+
+.fog2{
+
+    bottom:120px;
+
+    background:#7ca7da;
+
+    opacity:.18;
+
+    animation:fog2 60s linear infinite reverse;
+
+}
+
+@keyframes fog1{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(18%);
+
+    }
+
+}
+
+@keyframes fog2{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-18%);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOUNTAIN
+========================================================= */
+
+.mountain{
+
+    position:absolute;
+
+    bottom:230px;
+
+    width:100%;
+
+    height:260px;
+
+    background:
+
+    linear-gradient(to top,#10273f,#193b5c);
+
+    clip-path:
+
+    polygon(
+    0% 100%,
+    8% 60%,
+    18% 82%,
+    30% 40%,
+    44% 78%,
+    58% 38%,
+    72% 82%,
+    88% 42%,
+    100% 100%
+    );
+
+    opacity:.55;
+
+}
+
+
+/* =========================================================
+   FOREST BACK
+========================================================= */
+
+.forest-back{
+
+    position:absolute;
+
+    bottom:130px;
+
+    width:100%;
+
+    height:250px;
+
+    background:
+
+    repeating-linear-gradient(
+
+        90deg,
+
+        transparent 0 28px,
+
+        #0b1f2d 28px 38px
+
+    );
+
+    clip-path:
+
+    polygon(
+
+    0 100%,
+
+    0 45%,
+
+    4% 30%,
+
+    8% 55%,
+
+    12% 20%,
+
+    16% 50%,
+
+    20% 25%,
+
+    24% 60%,
+
+    28% 18%,
+
+    32% 58%,
+
+    36% 22%,
+
+    40% 65%,
+
+    44% 25%,
+
+    48% 60%,
+
+    52% 18%,
+
+    56% 55%,
+
+    60% 22%,
+
+    64% 62%,
+
+    68% 25%,
+
+    72% 58%,
+
+    76% 20%,
+
+    80% 60%,
+
+    84% 25%,
+
+    88% 58%,
+
+    92% 28%,
+
+    96% 55%,
+
+    100% 40%,
+
+    100% 100%
+
+    );
+
+}
+
+
+/* =========================================================
+   FOREST FRONT
+========================================================= */
+
+.forest-front{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:260px;
+
+    background:
+
+    linear-gradient(to top,#07161f,#0f2f34);
+
+    clip-path:
+
+    polygon(
+
+    0 100%,
+
+    0 45%,
+
+    5% 20%,
+
+    10% 65%,
+
+    15% 15%,
+
+    20% 60%,
+
+    25% 10%,
+
+    30% 70%,
+
+    35% 18%,
+
+    40% 62%,
+
+    45% 12%,
+
+    50% 72%,
+
+    55% 18%,
+
+    60% 65%,
+
+    65% 15%,
+
+    70% 70%,
+
+    75% 18%,
+
+    80% 60%,
+
+    85% 12%,
+
+    90% 70%,
+
+    95% 20%,
+
+    100% 55%,
+
+    100% 100%
+
+    );
+
+}
+
+
+/* =========================================================
+   HYDRANGEA FIELD
+========================================================= */
+
+.hydrangea-field{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:170px;
+
+    background:
+
+    radial-gradient(circle,#7ea7ff 2px,transparent 3px),
+    radial-gradient(circle,#5f88e5 2px,transparent 3px),
+    radial-gradient(circle,#9abfff 2px,transparent 3px);
+
+    background-size:
+
+    30px 30px,
+    40px 40px,
+    55px 55px;
+
+    opacity:.55;
+
+    animation:flowersMove 20s linear infinite;
+
+}
+
+@keyframes flowersMove{
+
+    from{
+
+        background-position:
+        0 0,
+        0 0,
+        0 0;
+
+    }
+
+    to{
+
+        background-position:
+        150px 0,
+        -150px 0,
+        80px 0;
+
+    }
+
+}
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:100;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+    animation:fadeDown 2s ease;
+
+}
+
+.small-text{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    color:#d9ebff;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+}
+
+.title{
+
+    margin-top:15px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:72px;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 15px rgba(255,255,255,.4),
+
+    0 0 50px rgba(120,180,255,.45);
+
+}
+
+.subtitle{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    color:#d5e8ff;
+
+    letter-spacing:2px;
+
+}
+
+
+/* =========================================================
+   GIFT SECTION
+========================================================= */
+
+.gift-section{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* =========================================================
+   GIFT LIGHT
+========================================================= */
+
+.light{
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(170,220,255,.75),
+    rgba(90,160,255,.2),
+    transparent);
+
+    filter:blur(40px);
+
+    animation:lightPulse 3s ease-in-out infinite;
+
+}
+
+@keyframes lightPulse{
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:.8;
+
+    }
+
+}
+
+
+/* =========================================================
+   GIFT CONTAINER
+========================================================= */
+
+.gift-container{
+
+    position:relative;
+
+    width:220px;
+
+    height:220px;
+
+    cursor:pointer;
+
+    animation:giftFloat 4s ease-in-out infinite;
+
+    transition:.35s;
+
+}
+
+.gift-container:hover{
+
+    transform:scale(1.05);
+
+}
+
+@keyframes giftFloat{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================================================
+   SHADOW
+========================================================= */
+
+.gift-shadow{
+
+    position:absolute;
+
+    width:170px;
+
+    height:25px;
+
+    background:rgba(0,0,0,.35);
+
+    border-radius:50%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-12px;
+
+    filter:blur(10px);
+
+}
+
+
+/* =========================================================
+   GIFT BODY
+========================================================= */
+
+.gift{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.gift-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:180px;
+
+    height:130px;
+
+    border-radius:12px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #1d4fa6,
+
+    #2b63cb,
+
+    #1d4fa6
+
+    );
+
+    box-shadow:
+
+    0 10px 40px rgba(20,60,160,.6);
+
+}
+
+
+/* =========================================================
+   GIFT TOP
+========================================================= */
+
+.gift-top{
+
+    position:absolute;
+
+    width:190px;
+
+    height:45px;
+
+    left:-5px;
+
+    top:5px;
+
+    border-radius:12px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #2b63cb,
+
+    #4f87ef,
+
+    #2b63cb
+
+    );
+
+}
+
+
+/* =========================================================
+   RIBBONS
+========================================================= */
+
+.gift-ribbon-v{
+
+    position:absolute;
+
+    width:20px;
+
+    height:180px;
+
+    left:80px;
+
+    background:#ffd44c;
+
+}
+
+.gift-ribbon-h{
+
+    position:absolute;
+
+    width:180px;
+
+    height:20px;
+
+    top:40px;
+
+    background:#ffd44c;
+
+}
+
+
+/* =========================================================
+   BOW
+========================================================= */
+
+.gift-bow{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    border:10px solid #ffd44c;
+
+    border-radius:50%;
+
+    top:-18px;
+
+}
+
+.bow-left{
+
+    left:38px;
+
+    transform:rotate(-25deg);
+
+}
+
+.bow-right{
+
+    right:38px;
+
+    transform:rotate(25deg);
+
+}
+
+
+/* =========================================================
+   CLICK TEXT
+========================================================= */
+
+.click-text{
+
+    margin-top:45px;
+
+    color:#dceeff;
+
+    letter-spacing:3px;
+
+    font-size:17px;
+
+    animation:blink 2.5s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.45;
+
+    }
+
+}
+
+
+/* =========================================================
+   INTRO ANIMATION
+========================================================= */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.gift::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    border-radius:20px;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(120,190,255,.55),
+
+    transparent);
+
+    filter:blur(35px);
+
+    z-index:-1;
+
+}
