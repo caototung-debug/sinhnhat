@@ -330,55 +330,60 @@ body{
 }
 
 .sub{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    gap:15px;
-
-    margin-top:20px;
-
-    color:#bdd9ff;
-
-    font-size:24px;
-
-    letter-spacing:4px;
-
+    gap:12px;
+    margin:25px auto;
+    width:100%;
 }
 
 .sub span{
-
-    animation:twinkle 2s ease-in-out infinite;
-
+    display:inline-block;
 }
 
+/* Chữ Happy Birthday */
 .sub span:nth-child(2){
-
-    animation:none;
-
+    color:#bdd9ff;
+    font-size:24px;
     letter-spacing:6px;
+    animation:none;
+}
 
+/* Các ngôi sao */
+.sub span:nth-child(1),
+.sub span:nth-child(3),
+.sub span:nth-child(4){
+
+    color:#FFD966;
+
+    font-size:22px;
+
+    text-shadow:
+        0 0 10px #FFD966,
+        0 0 20px #FFD966;
+
+    animation:twinkle 2s ease-in-out infinite;
+}
+
+.sub span:nth-child(3){
+    animation-delay:.5s;
+}
+
+.sub span:nth-child(4){
+    animation-delay:1s;
 }
 
 @keyframes twinkle{
 
     0%,100%{
-
         opacity:.5;
-
         transform:scale(1);
-
     }
 
     50%{
-
         opacity:1;
-
         transform:scale(1.3);
-
     }
 
 }
