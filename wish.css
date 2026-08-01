@@ -289,23 +289,35 @@ body{
 
 }
 
-.card h1{
+.birthday-title{
 
-    text-align:center;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    white-space:nowrap;
+
+    flex-wrap:nowrap;
 
     font-family:'Cormorant Garamond',serif;
 
     font-size:64px;
 
-    margin:20px 0;
-
     color:white;
 
     text-shadow:
+        0 0 15px rgba(255,255,255,.5),
+        0 0 40px rgba(120,180,255,.4);
 
-    0 0 15px rgba(255,255,255,.5),
+}
 
-    0 0 40px rgba(120,180,255,.4);
+.birthday-title span{
+
+    font-size:56px;
 
 }
 
