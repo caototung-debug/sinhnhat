@@ -331,15 +331,55 @@ body{
 
 .sub{
 
-    text-align:center;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:20px;
 
     color:#bdd9ff;
 
-    font-size:22px;
+    font-size:24px;
 
-    letter-spacing:5px;
+    letter-spacing:4px;
 
-    margin-bottom:20px;
+}
+
+.sub span{
+
+    animation:twinkle 2s ease-in-out infinite;
+
+}
+
+.sub span:nth-child(2){
+
+    animation:none;
+
+    letter-spacing:6px;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.5;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.3);
+
+    }
 
 }
 
