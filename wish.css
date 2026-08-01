@@ -1,0 +1,1265 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:#041321;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    position:relative;
+
+}
+
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-100;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #173f69 0%,
+    #0a2342 35%,
+    #07182f 65%,
+    #030a12 100%);
+
+}
+
+
+/* ==========================================================
+   MOON
+========================================================== */
+
+.moon{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    right:100px;
+
+    top:70px;
+
+    background:
+
+    radial-gradient(circle,
+
+    #ffffff,
+
+    #dfefff 60%,
+
+    #b7d6ff);
+
+    box-shadow:
+
+    0 0 35px white,
+
+    0 0 80px rgba(170,220,255,.8),
+
+    0 0 180px rgba(120,180,255,.5);
+
+    animation:moonFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   STARS
+========================================================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle,#ffffff 1px,transparent 2px);
+
+    background-size:60px 60px;
+
+    opacity:.45;
+
+    animation:starsMove 100s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    to{
+
+        transform:translateY(120px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FOG
+========================================================== */
+
+.fog{
+
+    position:absolute;
+
+    width:220%;
+
+    height:320px;
+
+    left:-60%;
+
+    bottom:80px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(200,220,255,.12);
+
+    filter:blur(90px);
+
+    animation:fogMove 45s linear infinite;
+
+}
+
+@keyframes fogMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(18%);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.card{
+
+    width:900px;
+
+    max-width:90%;
+
+    margin:70px auto;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:
+
+    rgba(8,22,45,.45);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+    1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 0 40px rgba(80,150,255,.25),
+
+    inset 0 0 25px rgba(255,255,255,.05);
+
+    animation:cardShow 2s ease;
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   DECORATION
+========================================================== */
+
+.line{
+
+    display:block;
+
+    width:180px;
+
+    height:2px;
+
+    margin:20px auto;
+
+    background:
+
+    linear-gradient(to right,
+
+    transparent,
+
+    #8ec5ff,
+
+    transparent);
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.card h2{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    letter-spacing:10px;
+
+    color:#dbeeff;
+
+    text-transform:uppercase;
+
+    margin-top:10px;
+
+}
+
+.card h1{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:64px;
+
+    margin:20px 0;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 15px rgba(255,255,255,.5),
+
+    0 0 40px rgba(120,180,255,.4);
+
+}
+
+.sub{
+
+    text-align:center;
+
+    color:#bdd9ff;
+
+    font-size:22px;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   GLOW BORDER
+========================================================== */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    padding:2px;
+
+    background:
+
+    linear-gradient(135deg,
+
+    rgba(255,255,255,.3),
+
+    transparent,
+
+    rgba(130,190,255,.3));
+
+    -webkit-mask:
+
+    linear-gradient(#fff 0 0) content-box,
+
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+            mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+/* ==========================================================
+   MESSAGE
+========================================================== */
+
+.message{
+
+    margin-top:45px;
+
+    font-size:20px;
+
+    line-height:2.1;
+
+    color:#eef6ff;
+
+    text-align:justify;
+
+    animation:fadeIn 2.5s ease;
+
+}
+
+.message p{
+
+    margin-bottom:28px;
+
+    position:relative;
+
+    padding-left:22px;
+
+}
+
+
+/* Dấu chấm trang trí */
+
+.message p::before{
+
+    content:"❈";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#9fd0ff;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================================================
+   HOVER EFFECT
+========================================================== */
+
+.message p{
+
+    transition:.35s;
+
+}
+
+.message p:hover{
+
+    transform:translateX(8px);
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   SIGNATURE
+========================================================== */
+
+.signature{
+
+    margin-top:60px;
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:40px;
+
+    color:#9ed2ff;
+
+    letter-spacing:3px;
+
+    text-shadow:
+
+        0 0 10px rgba(120,190,255,.7),
+
+        0 0 25px rgba(120,190,255,.5);
+
+    animation:glow 3s infinite ease-in-out;
+
+}
+
+
+/* ==========================================================
+   CARD HOVER
+========================================================== */
+
+.card{
+
+    transition:.5s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 0 60px rgba(100,180,255,.35),
+
+        inset 0 0 25px rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================================================
+   SCROLL BUTTON
+========================================================== */
+
+#topButton{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(80,150,255,.3);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 20px rgba(120,180,255,.4);
+
+    transition:.35s;
+
+}
+
+#topButton:hover{
+
+    transform:translateY(-5px) scale(1.08);
+
+    background:#5fa8ff;
+
+}
+
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   GLOW
+========================================================== */
+
+@keyframes glow{
+
+    0%{
+
+        text-shadow:
+
+            0 0 10px rgba(120,190,255,.5),
+
+            0 0 20px rgba(120,190,255,.3);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+            0 0 20px rgba(180,220,255,.9),
+
+            0 0 45px rgba(120,190,255,.8);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+            0 0 10px rgba(120,190,255,.5),
+
+            0 0 20px rgba(120,190,255,.3);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#07182f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#5c8fdc;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#82b4ff;
+
+}
+/* ==========================================================
+   FIREFLIES
+========================================================== */
+
+#fireflies{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.firefly{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#fff9a8;
+
+    box-shadow:
+        0 0 8px #fff6b0,
+        0 0 20px #ffe96d,
+        0 0 35px #fff7b8;
+
+    animation:fireflyFloat linear infinite;
+}
+
+@keyframes fireflyFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(.6);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-120px)
+            translateX(30px)
+            scale(1);
+
+    }
+
+    80%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-260px)
+            translateX(-40px)
+            scale(.5);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PETALS
+========================================================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    top:-50px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50% 40% 60% 40%;
+
+    background:linear-gradient(
+        135deg,
+        #a9c8ff,
+        #5f87e7);
+
+    opacity:.75;
+
+    filter:blur(.3px);
+
+    animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(120vh)
+            translateX(120px)
+            rotate(720deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   MAGIC PARTICLES
+========================================================== */
+
+.spark{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px #8fc7ff;
+
+    animation:spark 2.5s linear forwards;
+
+}
+
+@keyframes spark{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(.5);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translateY(-80px)
+            scale(2);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FOREST SHADOW
+========================================================== */
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:220px;
+
+    background:
+
+    linear-gradient(
+        to top,
+        #07161d,
+        transparent);
+
+    z-index:1;
+
+}
+
+
+/* ==========================================================
+   MOON LIGHT
+========================================================== */
+
+.moon::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-120px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(170,220,255,.18),
+    transparent);
+
+    filter:blur(40px);
+
+}
+
+
+/* ==========================================================
+   FLOATING EFFECT
+========================================================== */
+
+.card{
+
+    animation:
+        cardShow 2s ease,
+        floating 6s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CARD GLOW
+========================================================== */
+
+.card:hover{
+
+    box-shadow:
+
+        0 0 25px rgba(120,180,255,.4),
+
+        0 0 80px rgba(120,180,255,.2),
+
+        inset 0 0 25px rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================================================
+   TITLE SHIMMER
+========================================================== */
+
+.card h1{
+
+    animation:titleGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    50%{
+
+        text-shadow:
+
+        0 0 20px white,
+
+        0 0 40px #8bc8ff,
+
+        0 0 70px #8bc8ff;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SIGNATURE GLOW
+========================================================== */
+
+.signature{
+
+    animation:
+        glow 3s infinite,
+        heartbeat 2.5s infinite;
+
+}
+
+@keyframes heartbeat{
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+}
+
+
+/* ==========================================================
+   END DECORATION
+========================================================== */
+
+.signature::before{
+
+    content:"❀";
+
+    margin-right:12px;
+
+}
+
+.signature::after{
+
+    content:"❀";
+
+    margin-left:12px;
+
+}
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
+
+@media (max-width:1024px){
+
+    .card{
+
+        width:92%;
+
+        padding:45px;
+
+    }
+
+    .card h1{
+
+        font-size:52px;
+
+    }
+
+    .card h2{
+
+        font-size:22px;
+
+        letter-spacing:6px;
+
+    }
+
+    .message{
+
+        font-size:18px;
+
+        line-height:1.9;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+    .moon{
+
+        width:120px;
+
+        height:120px;
+
+        right:20px;
+
+        top:25px;
+
+    }
+
+    .card{
+
+        width:94%;
+
+        margin:30px auto;
+
+        padding:30px 22px;
+
+        border-radius:20px;
+
+    }
+
+    .card h2{
+
+        font-size:18px;
+
+        letter-spacing:4px;
+
+    }
+
+    .card h1{
+
+        font-size:34px;
+
+        line-height:1.3;
+
+    }
+
+    .sub{
+
+        font-size:16px;
+
+        letter-spacing:2px;
+
+    }
+
+    .message{
+
+        font-size:16px;
+
+        line-height:1.9;
+
+        text-align:left;
+
+    }
+
+    .signature{
+
+        font-size:28px;
+
+    }
+
+    #topButton{
+
+        width:48px;
+
+        height:48px;
+
+        right:20px;
+
+        bottom:20px;
+
+        font-size:18px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONE
+========================================================== */
+
+@media (max-width:480px){
+
+    .card{
+
+        padding:22px 18px;
+
+    }
+
+    .card h1{
+
+        font-size:28px;
+
+    }
+
+    .card h2{
+
+        font-size:16px;
+
+    }
+
+    .message{
+
+        font-size:15px;
+
+    }
+
+    .signature{
+
+        font-size:24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection{
+
+    background:#6aaeff;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   SMOOTH TRANSITION
+========================================================== */
+
+*{
+
+    transition:
+
+        color .3s,
+
+        background .3s,
+
+        transform .3s;
+
+}
+
+
+/* ==========================================================
+   CARD SHINE
+========================================================== */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-50%;
+
+    width:60%;
+
+    height:300%;
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,0),
+
+        rgba(255,255,255,.12),
+
+        rgba(255,255,255,0)
+
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 8s linear infinite;
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        left:-70%;
+
+    }
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FINAL FADE
+========================================================== */
+
+body{
+
+    animation:pageFade 2s;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
