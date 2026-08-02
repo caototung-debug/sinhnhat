@@ -144,17 +144,12 @@ body{
 
 }
 
-
-
 @keyframes starsMove{
-
 
     from{
 
         transform:translateY(0);
-
     }
-
 
     to{
 
@@ -178,9 +173,7 @@ body{
 
     height:250px;
 
-
     left:-25%;
-
 
     background:
 
@@ -190,23 +183,19 @@ body{
         transparent 70%
     );
 
-
     filter:blur(30px);
-
-
+   
     animation:fogMove 12s infinite alternate;
 
 }
 
 @keyframes fogMove{
 
-
     from{
 
         transform:translateX(-80px);
 
     }
-
 
     to{
 
@@ -222,7 +211,6 @@ body{
 
 .light{
 
-
     position:absolute;
 
     width:500px;
@@ -234,9 +222,7 @@ body{
 
     top:50%;
 
-
     transform:translate(-50%,-50%);
-
 
     background:
 
@@ -301,7 +287,26 @@ body{
     );
 
 }
+.forest::before{
 
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #020617 0px,
+        #020617 25px,
+        transparent 25px,
+        transparent 70px
+    );
+
+    opacity:.8;
+
+}
 /* ==========================================
    HOA CẨM TÚ CẦU XANH NAVY
 ========================================== */
@@ -869,21 +874,15 @@ body{
 
 .gift-ribbon-h{
 
-
     position:absolute;
-
 
     top:60px;
 
-
     width:220px;
-
 
     height:25px;
 
-
     background:
-
 
     linear-gradient(
 
@@ -893,9 +892,7 @@ body{
 
     );
 
-
     z-index:5;
-
 
 }
 
@@ -905,43 +902,31 @@ body{
 
 .gift-bow{
 
-
     position:absolute;
-
 
     top:-30px;
 
-
     width:70px;
-
 
     height:55px;
 
-
     background:#ffd966;
-
 
     border-radius:50%;
 
-
     z-index:6;
 
-
     transition:1s ease;
-
 
 }
 
 .bow-left{
 
-
     left:35px;
-
 
     transform:
 
     rotate(-35deg);
-
 
 }
 
@@ -1086,45 +1071,25 @@ body{
 ========================================== */
 
 
-.gift-container:hover .gift{
+.gift-container{
 
+    position:absolute;
 
-    animation:
+    left:50%;
 
-    shake .5s infinite;
+    bottom:150px;
 
+    transform:
+    translateX(-50%)
+    scale(.8);
 
-}
+    opacity:0;
 
-@keyframes shake{
+    z-index:50;
 
+    cursor:pointer;
 
-    0%{
-
-        transform:rotate(0);
-
-    }
-
-
-    25%{
-
-        transform:rotate(3deg);
-
-    }
-
-
-    50%{
-
-        transform:rotate(-3deg);
-
-    }
-
-
-    100%{
-
-        transform:rotate(0);
-
-    }
+    transition:2s ease;
 
 }
 /* ==========================================
@@ -1184,8 +1149,28 @@ body{
         opacity:1;
 
         transform:translateY(-40px);
-
     }
+}
+/* ==========================================
+   OVERLAY
+========================================== */
 
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle,
+        transparent 35%,
+        rgba(0,0,30,.65)
+    );
+
+    z-index:15;
+
+    pointer-events:none;
 
 }
