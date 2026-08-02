@@ -1,0 +1,297 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#03111f;
+
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#16365f 0%,#08182d 40%,#020b15 100%);
+
+}
+
+/* ==========================================================
+   MOON
+========================================================== */
+
+.moon{
+
+    position:absolute;
+
+    top:60px;
+    right:90px;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 40px white,
+    0 0 80px #8bc5ff,
+    0 0 150px rgba(150,210,255,.8);
+
+}
+
+/* ==========================================================
+   MOON LIGHT
+========================================================== */
+
+.light{
+
+    position:absolute;
+
+    top:-200px;
+    right:-100px;
+
+    width:700px;
+    height:900px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.18),
+    transparent 70%);
+
+}
+
+/* ==========================================================
+   FOG
+========================================================== */
+
+.fog{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    width:220%;
+    height:260px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    filter:blur(60px);
+
+    animation:fogMove 18s linear infinite;
+
+}
+
+@keyframes fogMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-20%);
+
+    }
+
+}
+
+/* ==========================================================
+   ROAD
+========================================================== */
+
+.road{
+
+    position:absolute;
+
+    bottom:-120px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:32%;
+    height:130%;
+
+    background:
+    linear-gradient(to bottom,
+    #25313f,
+    #12181f);
+
+    clip-path:polygon(46% 0,54% 0,100% 100%,0 100%);
+
+    box-shadow:
+    inset 0 0 40px rgba(255,255,255,.08);
+
+}
+
+/* ==========================================================
+   FOREST
+========================================================== */
+
+.forest{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:42%;
+    height:100%;
+
+}
+
+.left-forest{
+
+    left:0;
+
+    background:
+    radial-gradient(circle at bottom left,
+    #2d5a70,
+    #18334b 40%,
+    #07121d 100%);
+
+}
+
+.right-forest{
+
+    right:0;
+
+    background:
+    radial-gradient(circle at bottom right,
+    #2d5a70,
+    #18334b 40%,
+    #07121d 100%);
+
+}
+
+/* ==========================================================
+   HYDRANGEA
+========================================================== */
+
+.flowers{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:38%;
+    height:45%;
+
+    opacity:.95;
+
+}
+
+.left-flowers{
+
+    left:0;
+
+    background:
+    radial-gradient(circle,#6ca8ff 2px,transparent 3px),
+    radial-gradient(circle,#4b84da 3px,transparent 4px),
+    radial-gradient(circle,#87c3ff 2px,transparent 3px);
+
+    background-size:
+    40px 40px,
+    55px 55px,
+    65px 65px;
+
+}
+
+.right-flowers{
+
+    right:0;
+
+    background:
+    radial-gradient(circle,#6ca8ff 2px,transparent 3px),
+    radial-gradient(circle,#4b84da 3px,transparent 4px),
+    radial-gradient(circle,#87c3ff 2px,transparent 3px);
+
+    background-size:
+    40px 40px,
+    55px 55px,
+    65px 65px;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.content{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    z-index:50;
+
+}
+
+.loading-line{
+
+    width:220px;
+    height:2px;
+
+    margin:0 auto 35px;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    #8ecbff,
+    transparent);
+
+}
+
+.content h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:64px;
+
+    color:white;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 20px rgba(180,220,255,.6);
+
+}
+
+.content p{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:#d5e8ff;
+
+    letter-spacing:2px;
+
+}
