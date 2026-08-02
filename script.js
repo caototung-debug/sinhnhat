@@ -193,3 +193,17 @@ setInterval(() => {
         `scale(${scale})`;
 
 }, 30);
+const gift = document.getElementById("gift");
+
+gift.addEventListener("click",()=>{
+
+    gift.querySelector(".gift")
+        .classList.add("open");
+
+    setTimeout(()=>{
+
+        window.location.href="nhungloidan.html";
+
+    },2500);
+
+});
