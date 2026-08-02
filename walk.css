@@ -12,7 +12,6 @@
 
 }
 
-
 body{
 
     width:100%;
@@ -27,12 +26,9 @@ body{
 
 }
 
-
-
 /* ==========================================
    BACKGROUND RỪNG ĐÊM
 ========================================== */
-
 
 .background{
 
@@ -54,12 +50,9 @@ body{
 
 }
 
-
-
 /* ==========================================
    MẶT TRĂNG
 ========================================== */
-
 
 .moon{
 
@@ -98,8 +91,6 @@ body{
 
 }
 
-
-
 @keyframes moonFloat{
 
 
@@ -118,14 +109,9 @@ body{
 
 }
 
-
-
-
-
 /* ==========================================
    BẦU TRỜI SAO
 ========================================== */
-
 
 .stars{
 
@@ -178,15 +164,9 @@ body{
 
 }
 
-
-
-
-
-
 /* ==========================================
    SƯƠNG MÙ
 ========================================== */
-
 
 .fog{
 
@@ -218,8 +198,6 @@ body{
 
 }
 
-
-
 @keyframes fogMove{
 
 
@@ -238,13 +216,9 @@ body{
 
 }
 
-
-
-
 /* ==========================================
    ÁNH SÁNG TRUNG TÂM
 ========================================== */
-
 
 .light{
 
@@ -278,18 +252,11 @@ body{
 
 }
 
-
-
-
-
-
 /* ==========================================
    RỪNG HAI BÊN
 ========================================== */
 
-
 .forest{
-
 
     position:absolute;
 
@@ -301,18 +268,7 @@ body{
 
     z-index:5;
 
-    background:
-
-    linear-gradient(
-        to top,
-        #020617,
-        transparent
-    );
-
-
 }
-
-
 
 .left-forest{
 
@@ -330,8 +286,6 @@ body{
 
 }
 
-
-
 .right-forest{
 
 
@@ -347,10 +301,10 @@ body{
     );
 
 }
+
 /* ==========================================
    HOA CẨM TÚ CẦU XANH NAVY
 ========================================== */
-
 
 .flowers{
 
@@ -366,13 +320,11 @@ body{
 
 }
 
-
 .left-flowers{
 
     left:20px;
 
 }
-
 
 .right-flowers{
 
@@ -381,8 +333,6 @@ body{
     transform:scaleX(-1);
 
 }
-
-
 
 .flowers::before,
 .flowers::after{
@@ -427,8 +377,6 @@ body{
 
 }
 
-
-
 .flowers::before{
 
     bottom:30px;
@@ -436,8 +384,6 @@ body{
     left:40px;
 
 }
-
-
 
 .flowers::after{
 
@@ -447,13 +393,9 @@ body{
 
 }
 
-
-
-
 /* ==========================================
    LÁ CÂY
 ========================================== */
-
 
 .flowers{
 
@@ -467,17 +409,11 @@ body{
 
 }
 
-
-
-
-
 /* ==========================================
    CON ĐƯỜNG TRONG RỪNG
 ========================================== */
 
-
 .road{
-
 
     position:absolute;
 
@@ -489,8 +425,6 @@ body{
 
 
     transform:translateX(-50%);
-
-
 
     width:350px;
 
@@ -513,8 +447,6 @@ body{
 
     );
 
-
-
     clip-path:
 
     polygon(
@@ -536,14 +468,9 @@ body{
 
 }
 
-
-
-
-
 /* ==========================================
    NỘI DUNG TRUNG TÂM
 ========================================== */
-
 
 .content{
 
@@ -579,9 +506,6 @@ body{
 
 }
 
-
-
-
 .content h1{
 
 
@@ -616,9 +540,6 @@ body{
 
 }
 
-
-
-
 .content p{
 
 
@@ -635,9 +556,6 @@ body{
 
 
 }
-
-
-
 
 @keyframes fadeIn{
 
@@ -671,15 +589,9 @@ body{
 
 }
 
-
-
-
-
-
 /* ==========================================
    THANH TIẾN TRÌNH
 ========================================== */
-
 
 .progress{
 
@@ -704,10 +616,7 @@ body{
 
     overflow:hidden;
 
-
 }
-
-
 
 .progress-bar{
 
@@ -731,49 +640,31 @@ body{
 
     );
 
-
     border-radius:20px;
-
 
     animation:
 
-
     loading 5s linear forwards;
-
 
 }
 
-
-
-
-
 @keyframes loading{
-
 
     from{
 
         width:0%;
-
     }
-
 
     to{
 
         width:100%;
-
     }
 
-
 }
-
-
-
-
 
 /* ==========================================
    HIỆU ỨNG MỜ CAMERA
 ========================================== */
-
 
 .background{
 
@@ -792,12 +683,11 @@ body{
     );
 
     z-index:0;
-
 }
+
 /* ==========================================
    GIFT CONTAINER
 ========================================== */
-
 
 .gift-container{
 
@@ -807,121 +697,80 @@ body{
 
     bottom:150px;
 
-
     transform:
 
     translateX(-50%)
     scale(.8);
 
-
     opacity:0;
-
 
     z-index:20;
 
-
     cursor:pointer;
-
 
     transition:2s ease;
 
-
 }
-
-
 
 /* xuất hiện sau loading */
 
 .gift-container.show{
 
-
     opacity:1;
-
 
     transform:
 
     translateX(-50%)
     scale(1);
 
-
 }
-
-
-
-
 
 /* ==========================================
    HỘP QUÀ
 ========================================== */
 
-
 .gift{
-
 
     position:relative;
 
-
     width:220px;
 
-
     height:180px;
-
 
     animation:
 
     giftFloat 3s infinite ease-in-out;
 
-
 }
 
-
-
-
-
 @keyframes giftFloat{
-
 
     0%,100%{
 
         transform:translateY(0);
-
     }
 
-
     50%{
-
         transform:translateY(-15px);
-
     }
 
 }
-
-
-
-
 
 /* ==========================================
    THÂN HỘP QUÀ
 ========================================== */
 
-
 .gift-body{
-
 
     position:absolute;
 
-
     bottom:0;
-
 
     width:220px;
 
-
     height:130px;
 
-
     background:
-
 
     linear-gradient(
 
@@ -930,53 +779,35 @@ body{
         #183b6b,
 
         #0b1d3a
-
     );
-
 
     border-radius:10px;
 
-
     box-shadow:
-
 
     0 20px 50px rgba(0,0,0,.5),
 
-
     0 0 30px rgba(100,170,255,.5);
 
-
 }
-
-
-
-
 
 /* ==========================================
    NẮP HỘP
 ========================================== */
 
-
 .gift-top{
-
 
     position:absolute;
 
-
     top:10px;
-
 
     left:-10px;
 
-
     width:240px;
-
 
     height:45px;
 
-
     background:
-
 
     linear-gradient(
 
@@ -988,49 +819,33 @@ body{
 
     );
 
-
     border-radius:10px;
-
 
     z-index:3;
 
-
     transform-origin:center bottom;
-
 
     transition:1s ease;
 
-
 }
-
-
-
 
 /* ==========================================
    RUY BĂNG DỌC
 ========================================== */
 
-
 .gift-ribbon-v{
-
 
     position:absolute;
 
-
     left:95px;
-
 
     bottom:0;
 
-
     width:30px;
-
 
     height:180px;
 
-
     background:
-
 
     linear-gradient(
 
@@ -1050,12 +865,7 @@ body{
 
 }
 
-
-
-
-
 /* RUY BĂNG NGANG */
-
 
 .gift-ribbon-h{
 
@@ -1089,14 +899,9 @@ body{
 
 }
 
-
-
-
-
 /* ==========================================
    NƠ QUÀ
 ========================================== */
-
 
 .gift-bow{
 
@@ -1127,9 +932,6 @@ body{
 
 }
 
-
-
-
 .bow-left{
 
 
@@ -1142,8 +944,6 @@ body{
 
 
 }
-
-
 
 .bow-right{
 
@@ -1158,15 +958,9 @@ body{
 
 }
 
-
-
-
-
-
 /* ==========================================
    HIỆU ỨNG MỞ QUÀ
 ========================================== */
-
 
 .gift.open .gift-top{
 
@@ -1181,8 +975,6 @@ body{
 
 }
 
-
-
 .gift.open .bow-left{
 
 
@@ -1193,10 +985,7 @@ body{
 
     rotate(-60deg);
 
-
 }
-
-
 
 .gift.open .bow-right{
 
@@ -1207,18 +996,11 @@ body{
     translate(50px,-40px)
 
     rotate(60deg);
-
-
 }
-
-
-
-
 
 /* ==========================================
    ÁNH SÁNG KHI MỞ QUÀ
 ========================================== */
-
 
 .gift.open::after{
 
@@ -1262,18 +1044,12 @@ body{
 
     );
 
-
     animation:
 
     giftLight 2s ease;
 
 
 }
-
-
-
-
-
 @keyframes giftLight{
 
 
@@ -1305,11 +1081,6 @@ body{
 
 }
 
-
-
-
-
-
 /* ==========================================
    HIỆU ỨNG RUNG KHI CHỜ CLICK
 ========================================== */
@@ -1324,9 +1095,6 @@ body{
 
 
 }
-
-
-
 
 @keyframes shake{
 
@@ -1363,7 +1131,6 @@ body{
    ĐOM ĐÓM
 ========================================== */
 
-
 #fireflies{
 
     position:absolute;
@@ -1375,8 +1142,6 @@ body{
     z-index:3;
 
 }
-
-
 
 .fly{
 
@@ -1401,12 +1166,7 @@ body{
     animation:
 
     flyMove 5s infinite ease-in-out;
-
-
 }
-
-
-
 
 @keyframes flyMove{
 
@@ -1418,7 +1178,6 @@ body{
         transform:translateY(0);
 
     }
-
 
     50%{
 
