@@ -349,3 +349,461 @@ body{
     );
 
 }
+/* ==========================================
+   HOA CẨM TÚ CẦU XANH NAVY
+========================================== */
+
+
+.flowers{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:300px;
+
+    height:300px;
+
+    z-index:2;
+
+}
+
+
+.left-flowers{
+
+    left:20px;
+
+}
+
+
+.right-flowers{
+
+    right:20px;
+
+    transform:scaleX(-1);
+
+}
+
+
+
+.flowers::before,
+.flowers::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+    height:180px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    radial-gradient(
+        circle,
+        #8bb8ff 5%,
+        #4169e1 25%,
+        #172554 60%,
+        transparent 70%
+    );
+
+
+    filter:
+
+    blur(.5px);
+
+
+    box-shadow:
+
+
+    0 0 25px rgba(100,150,255,.6);
+
+
+}
+
+
+
+.flowers::before{
+
+    bottom:30px;
+
+    left:40px;
+
+}
+
+
+
+.flowers::after{
+
+    bottom:80px;
+
+    left:90px;
+
+}
+
+
+
+
+/* ==========================================
+   LÁ CÂY
+========================================== */
+
+
+.flowers{
+
+    background:
+
+    radial-gradient(
+        ellipse,
+        rgba(5,30,40,.9),
+        transparent 70%
+    );
+
+}
+
+
+
+
+
+/* ==========================================
+   CON ĐƯỜNG TRONG RỪNG
+========================================== */
+
+
+.road{
+
+
+    position:absolute;
+
+
+    bottom:-100px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+
+    width:350px;
+
+
+    height:550px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        to top,
+
+        rgba(15,35,55,.9),
+
+        rgba(30,55,80,.3),
+
+        transparent
+
+    );
+
+
+
+    clip-path:
+
+    polygon(
+        35% 0,
+        65% 0,
+        100% 100%,
+        0 100%
+    );
+
+
+
+    filter:
+
+    blur(1px);
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   NỘI DUNG TRUNG TÂM
+========================================== */
+
+
+.content{
+
+
+    position:absolute;
+
+
+    top:50%;
+
+
+    left:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    z-index:5;
+
+
+
+    animation:
+
+    fadeIn 3s ease;
+
+}
+
+
+
+
+.content h1{
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:55px;
+
+
+    font-weight:700;
+
+
+
+    letter-spacing:5px;
+
+
+    color:#e8f4ff;
+
+
+
+    text-shadow:
+
+
+    0 0 15px rgba(150,210,255,.8),
+
+
+    0 0 40px rgba(80,150,255,.6);
+
+
+}
+
+
+
+
+.content p{
+
+
+    margin-top:20px;
+
+
+    font-size:20px;
+
+
+    letter-spacing:3px;
+
+
+    color:#c7ddff;
+
+
+}
+
+
+
+
+@keyframes fadeIn{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translate(-50%,-30%);
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translate(-50%,-50%);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* ==========================================
+   THANH TIẾN TRÌNH
+========================================== */
+
+
+.progress{
+
+
+    width:350px;
+
+
+    height:5px;
+
+
+    margin:40px auto;
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.progress-bar{
+
+
+    height:100%;
+
+
+    width:0%;
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        #8ec5ff,
+
+        white
+
+    );
+
+
+    border-radius:20px;
+
+
+    animation:
+
+
+    loading 5s linear forwards;
+
+
+}
+
+
+
+
+
+@keyframes loading{
+
+
+    from{
+
+        width:0%;
+
+    }
+
+
+    to{
+
+        width:100%;
+
+    }
+
+
+}
+
+
+
+
+
+/* ==========================================
+   HIỆU ỨNG MỜ CAMERA
+========================================== */
+
+
+.overlay{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+        circle,
+
+        transparent 30%,
+
+        rgba(0,0,20,.65)
+
+    );
+
+
+    z-index:10;
+
+
+    pointer-events:none;
+
+
+}
