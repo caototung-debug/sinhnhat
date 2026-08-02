@@ -982,3 +982,44 @@ main{
     z-index:-1;
 
 }
+/* ===========================
+   OPEN GIFT
+=========================== */
+
+.gift.open .gift-top{
+
+    transform:
+        translateY(-80px)
+        rotate(-12deg);
+
+    transition:1s ease;
+
+}
+
+.gift.open .bow-left{
+
+    transform:
+        translate(-35px,-25px)
+        rotate(-35deg);
+
+    transition:1s;
+
+}
+
+.gift.open .bow-right{
+
+    transform:
+        translate(35px,-25px)
+        rotate(35deg);
+
+    transition:1s;
+
+}
+
+.gift-top,
+.bow-left,
+.bow-right{
+
+    transition:1s ease;
+
+}
