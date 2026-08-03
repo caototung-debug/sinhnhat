@@ -8,7 +8,6 @@
     box-sizing:border-box;
 }
 
-
 body{
 
     width:100%;
@@ -18,14 +17,14 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:#020817;
+    background:#020617;
 
 }
 
 
 
 /* ======================================
-        BẦU TRỜI KHU RỪNG
+        BACKGROUND
 ====================================== */
 
 
@@ -34,7 +33,6 @@ body{
     position:fixed;
 
     inset:0;
-
 
     background:
 
@@ -47,8 +45,9 @@ body{
 
     overflow:hidden;
 
-}
+    z-index:-1;
 
+}
 
 
 
@@ -61,16 +60,13 @@ body{
 
     position:absolute;
 
-
-    top:80px;
+    top:70px;
 
     right:15%;
-
 
     width:130px;
 
     height:130px;
-
 
     border-radius:50%;
 
@@ -79,23 +75,20 @@ body{
 
     radial-gradient(
         circle,
-        white,
-        #d9ecff 40%,
+        #ffffff,
+        #dbeeff 40%,
         transparent 70%
     );
-
 
 
     box-shadow:
 
     0 0 40px #d8efff,
 
-    0 0 100px rgba(120,180,255,.7);
+    0 0 100px rgba(150,200,255,.8);
 
 
-    animation:
-
-    moonMove 8s infinite ease-in-out;
+    animation:moonMove 8s infinite ease-in-out;
 
 }
 
@@ -103,17 +96,13 @@ body{
 
 @keyframes moonMove{
 
-
     50%{
 
         transform:translateY(-15px);
 
     }
 
-
 }
-
-
 
 
 
@@ -124,7 +113,6 @@ body{
 
 
 .stars{
-
 
     position:absolute;
 
@@ -139,18 +127,15 @@ body{
     );
 
 
-    background-size:
-
-    70px 70px;
+    background-size:70px 70px;
 
 
-    opacity:.5;
+    opacity:.45;
 
 
     animation:
 
-    starMove 30s linear infinite;
-
+    starMove 40s linear infinite;
 
 }
 
@@ -172,7 +157,6 @@ body{
 
     }
 
-
 }
 
 
@@ -189,8 +173,7 @@ body{
 
     position:absolute;
 
-
-    bottom:0;
+    bottom:-50px;
 
     left:-20%;
 
@@ -198,7 +181,6 @@ body{
     width:140%;
 
     height:250px;
-
 
 
     background:
@@ -213,12 +195,12 @@ body{
     filter:blur(30px);
 
 
-
     animation:
 
-    fogMove 10s infinite alternate;
+    fogMove 12s infinite alternate;
 
 }
+
 
 
 
@@ -238,7 +220,6 @@ body{
 
     }
 
-
 }
 
 
@@ -246,7 +227,7 @@ body{
 
 
 /* ======================================
-        ÁNH SÁNG GIỮA RỪNG
+        ÁNH SÁNG TRUNG TÂM
 ====================================== */
 
 
@@ -261,21 +242,20 @@ body{
     height:500px;
 
 
-    left:50%;
-
     top:55%;
 
+    left:50%;
 
-    transform:
 
-    translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+
 
 
     background:
 
     radial-gradient(
         circle,
-        rgba(130,190,255,.25),
+        rgba(120,180,255,.25),
         transparent 70%
     );
 
@@ -283,6 +263,7 @@ body{
     filter:blur(20px);
 
 }
+
 
 
 
@@ -297,23 +278,15 @@ body{
 
     position:absolute;
 
-
     bottom:0;
 
 
     width:45%;
 
-
     height:80%;
 
 
-    background:
-
-    linear-gradient(
-        to top,
-        #010617,
-        transparent
-    );
+    z-index:5;
 
 
 }
@@ -324,7 +297,17 @@ body{
 
     left:0;
 
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #010617,
+        transparent
+    );
+
 }
+
 
 
 
@@ -332,16 +315,25 @@ body{
 
     right:0;
 
+
+    background:
+
+    linear-gradient(
+        -90deg,
+        #010617,
+        transparent
+    );
+
 }
 
 
 
 
+.forest::before{
 
-
-.forest::after{
 
     content:"";
+
 
     position:absolute;
 
@@ -352,20 +344,14 @@ body{
 
     repeating-linear-gradient(
         90deg,
-        rgba(0,0,0,.8) 0px,
-        rgba(0,0,0,.8) 20px,
-        transparent 20px,
+        #020617 0px,
+        #020617 25px,
+        transparent 25px,
         transparent 70px
     );
 
 
-    clip-path:polygon(
-        0 0,
-        100% 20%,
-        100% 100%,
-        0 100%
-    );
-
+    opacity:.8;
 
 }
 
@@ -374,41 +360,48 @@ body{
 
 
 /* ======================================
-        HOA CẨM TÚ CẦU NAVY
+        HOA CẨM TÚ CẦU
 ====================================== */
 
 
 .flowers{
 
+
     position:absolute;
 
+
     bottom:20px;
+
 
     width:350px;
 
     height:350px;
 
+
     z-index:10;
 
+
 }
+
 
 
 
 .left-flowers{
 
-    left:20px;
+    left:10px;
 
 }
+
+
 
 
 .right-flowers{
 
-    right:20px;
+    right:10px;
 
     transform:scaleX(-1);
 
 }
-
 
 
 
@@ -425,12 +418,10 @@ body{
 
     width:190px;
 
-
     height:190px;
 
 
     border-radius:50%;
-
 
 
     background:
@@ -438,7 +429,7 @@ body{
 
     radial-gradient(
         circle,
-        #9ac7ff,
+        #b9dcff 5%,
         #4169e1 30%,
         #172554 65%,
         transparent 70%
@@ -449,8 +440,7 @@ body{
     box-shadow:
 
 
-    0 0 30px rgba(100,160,255,.7);
-
+    0 0 35px rgba(120,170,255,.7);
 
 
 }
@@ -461,20 +451,19 @@ body{
 
     left:40px;
 
-    bottom:20px;
+    bottom:30px;
 
 }
+
 
 
 .flowers::after{
 
-    left:100px;
+    left:120px;
 
-    bottom:90px;
+    bottom:100px;
 
 }
-
-
 
 
 
@@ -501,19 +490,22 @@ body{
 
 
 
-    width:400px;
-
+    width:420px;
 
     height:600px;
 
 
+
     background:
 
-
     linear-gradient(
+
         to top,
-        rgba(20,45,70,.9),
+
+        rgba(30,55,80,.9),
+
         transparent
+
     );
 
 
@@ -528,14 +520,15 @@ body{
     );
 
 
+    z-index:3;
+
 }
 
 
 
 
-
 /* ======================================
-        NỘI DUNG
+        TEXT
 ====================================== */
 
 
@@ -547,14 +540,10 @@ body{
 
     top:50%;
 
-
     left:50%;
 
 
-    transform:
-
-    translate(-50%,-50%);
-
+    transform:translate(-50%,-50%);
 
 
     text-align:center;
@@ -563,68 +552,10 @@ body{
     color:white;
 
 
-    z-index:20;
+    z-index:50;
 
 
 }
-
-
-
-
-
-.loader{
-
-
-    width:90px;
-
-
-    height:90px;
-
-
-    margin:auto;
-
-
-    margin-bottom:40px;
-
-
-
-    border-radius:50%;
-
-
-
-    border:
-
-    5px solid rgba(255,255,255,.2);
-
-
-
-    border-top:
-
-    5px solid #8ec5ff;
-
-
-
-    animation:
-
-    spin 1s linear infinite;
-
-}
-
-
-
-@keyframes spin{
-
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-
-}
-
-
 
 
 
@@ -648,16 +579,12 @@ body{
 
     text-shadow:
 
-
     0 0 20px #8ec5ff,
 
     0 0 50px #4d8cff;
 
 
-
 }
-
-
 
 
 
@@ -673,7 +600,7 @@ body{
     letter-spacing:3px;
 
 
-    color:#c9ddff;
+    color:#cfe2ff;
 
 }
 
@@ -682,65 +609,328 @@ body{
 
 
 /* ======================================
-        ĐOM ĐÓM
+        THANH LOADING
 ====================================== */
 
 
-#fireflies{
+.progress{
+
+
+    width:350px;
+
+    height:5px;
+
+
+    margin:40px auto;
+
+
+    background:
+
+    rgba(255,255,255,.2);
+
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress-bar{
+
+
+    width:0%;
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #8ec5ff,
+        white
+    );
+
+
+    animation:
+
+    loading 5s linear forwards;
+
+}
+
+
+
+@keyframes loading{
+
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+
+/* ======================================
+        HỘP QUÀ
+====================================== */
+
+
+.gift-container{
 
 
     position:absolute;
 
 
-    inset:0;
+    bottom:120px;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%)
+    scale(.8);
+
+
+    opacity:0;
+
+
+    z-index:60;
+
+
+    cursor:pointer;
+
+
+    transition:2s;
+
+}
+
+
+
+.gift-container.show{
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateX(-50%)
+    scale(1);
+
+}
+
+
+
+.gift{
+
+
+    position:relative;
+
+
+    width:220px;
+
+    height:180px;
+
+
+    animation:
+
+    floatGift 3s infinite;
+
+}
+
+
+
+
+@keyframes floatGift{
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+
+
+.gift-body{
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    width:220px;
+
+
+    height:130px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #214d8f,
+        #081b3a
+    );
+
+
+    border-radius:10px;
+
+}
+
+
+
+
+.gift-top{
+
+
+    position:absolute;
+
+
+    top:10px;
+
+
+    left:-10px;
+
+
+    width:240px;
+
+
+    height:45px;
+
+
+    background:#315da8;
+
+
+    border-radius:10px;
 
 
 }
 
 
 
-.fly{
+
+
+.gift-ribbon-v{
 
 
     position:absolute;
 
 
-    width:6px;
+    left:95px;
 
 
-    height:6px;
+    width:30px;
+
+
+    height:180px;
+
+
+    background:#ffd966;
+
+}
+
+
+
+.gift-ribbon-h{
+
+
+    position:absolute;
+
+
+    top:60px;
+
+
+    width:220px;
+
+
+    height:25px;
+
+
+    background:#ffd966;
+
+}
+
+
+
+
+.gift-bow{
+
+
+    position:absolute;
+
+
+    top:-30px;
+
+
+    width:70px;
+
+
+    height:55px;
+
+
+    background:#ffd966;
 
 
     border-radius:50%;
 
 
-    background:#fff5a8;
+}
 
 
-    box-shadow:
 
-    0 0 15px #fff5a8;
+.bow-left{
+
+    left:35px;
+
+}
 
 
-    animation:
+.bow-right{
 
-    fly 5s infinite ease-in-out;
-
+    right:35px;
 
 }
 
 
 
-@keyframes fly{
+
+/* ======================================
+        OVERLAY
+====================================== */
 
 
-    50%{
+.overlay{
 
-        transform:translateY(-40px);
 
-        opacity:1;
+    position:absolute;
 
-    }
+    inset:0;
 
+
+    background:
+
+    radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(0,0,30,.6)
+    );
+
+
+    z-index:40;
 
 }
