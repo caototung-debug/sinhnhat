@@ -22,7 +22,6 @@ body {
     z-index: 0;
 }
 
-/* ================= MOON (MẶT TRĂNG) ================= */
 .moon {
     position: absolute;
     width: 110px;
@@ -34,7 +33,6 @@ body {
     box-shadow: 0 0 20px #ffffff, 0 0 50px rgba(165, 203, 255, 0.8);
 }
 
-/* ================= STARS (SAO ĐÊM) ================= */
 .stars {
     position: absolute;
     inset: 0;
@@ -43,7 +41,6 @@ body {
     opacity: 0.3;
 }
 
-/* ================= CON ĐƯỜNG ================= */
 .road {
     position: absolute;
     bottom: 0;
@@ -139,6 +136,7 @@ body {
     background: linear-gradient(135deg, #1e3a8a, #0f172a);
     border-radius: 0 0 8px 8px;
     box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+    z-index: 2;
 }
 
 .gift-top {
@@ -149,22 +147,30 @@ body {
     height: 20px;
     background: #2563eb;
     border-radius: 6px;
+    z-index: 4;
+    transform-origin: bottom left;
 }
 
 .gift-ribbon-v {
     position: absolute;
     left: 47px;
+    top: 0;
     width: 16px;
-    height: 88px;
+    height: 100px;
     background: #fbbf24;
+    z-index: 5;
+    transform-origin: center;
 }
 
 .gift-ribbon-h {
     position: absolute;
     top: 40px;
+    left: 0;
     width: 110px;
     height: 14px;
     background: #fbbf24;
+    z-index: 3;
+    transform-origin: center;
 }
 
 .gift-bow {
@@ -174,10 +180,71 @@ body {
     height: 26px;
     background: #fbbf24;
     border-radius: 50%;
+    z-index: 6;
 }
 
 .bow-left { left: 20px; transform: rotate(-25deg); }
 .bow-right { right: 20px; transform: rotate(25deg); }
+
+/* ================= HIỆU ỨNG RÚT DÂY & BẬT NẮP HỘP QUÀ ================= */
+.gift-container.open .gift {
+    animation: none !important; /* Dừng nhún nhảy khi mở */
+}
+
+/* Nơ bay văng lên trên */
+.gift-container.open .gift-bow {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.27) !important;
+    transform: translateY(-80px) scale(0.2) rotate(45deg) !important;
+    opacity: 0 !important;
+}
+
+/* Dây dọc co rút biến mất */
+.gift-container.open .gift-ribbon-v {
+    transition: all 0.5s ease-in-out !important;
+    transform: scaleY(0) !important;
+    opacity: 0 !important;
+}
+
+/* Dây ngang co rút biến mất */
+.gift-container.open .gift-ribbon-h {
+    transition: all 0.5s ease-in-out !important;
+    transform: scaleX(0) !important;
+    opacity: 0 !important;
+}
+
+/* Nắp hộp bật mở tung lên trên */
+.gift-container.open .gift-top {
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.27) 0.2s !important;
+    transform: translateY(-70px) rotate(-35deg) !important;
+    opacity: 0.9 !important;
+}
+
+/* Thân hộp bừng sáng mạnh */
+.gift-container.open .gift-body {
+    box-shadow: 0 0 60px 20px rgba(147, 197, 253, 0.9), 0 0 100px 40px rgba(59, 130, 246, 0.6) !important;
+}
+
+/* ================= ÁNH SÁNG BÙNG NỔ TỪ LÒNG HỘP ================= */
+.flash-screen {
+    position: absolute;
+    top: 35px;
+    left: 55px; /* Tâm lòng hộp quà */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 20%, #93c5fd 60%, rgba(255,255,255,0) 100%);
+    box-shadow: 0 0 50px 30px #ffffff, 0 0 100px 60px #60a5fa;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+    pointer-events: none;
+    z-index: 99999;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-in;
+}
+
+.flash-screen.active {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(350) !important; /* Phóng to trùm kín màn hình */
+}
 
 /* ================= ĐOM ĐÓM ================= */
 .firefly {
@@ -194,65 +261,4 @@ body {
 @keyframes flyGlow {
     0% { opacity: 0.2; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1.3); }
-}
-
-/* ================= HIỆU ỨNG RÚT DÂY & BẬT NẮP HỘP QUÀ ================= */
-
-/* Transition mượt cho từng chi tiết của hộp */
-.gift-ribbon-v, 
-.gift-ribbon-h, 
-.gift-bow, 
-.gift-top, 
-.gift-body {
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* 1. Nơ vàng bay nhẹ lên rồi mờ dần */
-.gift-container.open .gift-bow {
-    transform: translateY(-60px) scale(0.5) !important;
-    opacity: 0 !important;
-}
-
-/* 2. Dây dọc rút ngắn lại và biến mất */
-.gift-container.open .gift-ribbon-v {
-    height: 0 !important;
-    top: 50% !important;
-    opacity: 0 !important;
-}
-
-/* 3. Dây ngang thu nhỏ chiều rộng rồi biến mất */
-.gift-container.open .gift-ribbon-h {
-    width: 0 !important;
-    left: 50% !important;
-    opacity: 0 !important;
-}
-
-/* 4. Nắp hộp bật mở nhè nhẹ lên trên */
-.gift-container.open .gift-top {
-    transform: translateY(-70px) rotate(-15deg) !important;
-    opacity: 0.9 !important;
-}
-
-/* 5. Thân hộp quà tỏa quầng sáng dịu từ bên trong */
-.gift-container.open .gift-body {
-    box-shadow: 0 0 60px 20px rgba(147, 197, 253, 0.9), 0 0 100px 40px rgba(59, 130, 246, 0.6) !important;
-}
-
-/* ================= FLASH ÁNH SÁNG MỀM MẠI, CHUYỂN TRANG ================= */
-.flash-screen {
-    position: fixed;
-    inset: 0;
-    /* Ánh sáng dịu tỏa từ tâm ra viền */
-    background: radial-gradient(circle at center, #ffffff 20%, #dbeafe 60%, #93c5fd 100%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 99999;
-    /* Hiện lên dịu dàng trong 1.2s */
-    transition: opacity 1.2s ease-in-out;
-}
-
-/* Kích hoạt phủ kín màn hình */
-.flash-screen.active {
-    opacity: 1 !important;
-    pointer-events: all;
 }
