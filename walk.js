@@ -21,26 +21,33 @@ if (typing) {
 }
 
 
-    /* ==========================================
-        2. THANH LOADING & HỘP QUÀ
-    ========================================== */
-    const gift = document.getElementById("gift");
-    const progress = document.querySelector(".progress");
+   /* ==========================================
+    3. CLICK HỘP QUÀ: RÚT DÂY + CHÓI SÁNG + CHUYỂN TRANG
+========================================== */
+const gift = document.getElementById("gift");
+const flashScreen = document.querySelector(".flash-screen");
 
-    // Ẩn thanh loading sau 4s
-    setTimeout(() => {
-        if (progress) progress.style.display = "none";
-    }, 4000);
+if (gift) {
+    gift.addEventListener("click", () => {
+        // Tránh click nhiều lần
+        if (gift.classList.contains("open")) return;
 
-    // Mở hộp quà khi click
-    if (gift) {
-        gift.addEventListener("click", () => {
-            gift.classList.add("open");
-            setTimeout(() => {
-                window.location.href = "nhungloidan.html";
-            }, 2000);
-        });
-    }
+        // Bước 1: Bung dây ruy-băng & bật nắp hộp quà
+        gift.classList.add("open");
+
+        // Bước 2: Sau 0.5s hộp mở, bừng sáng chói màn hình
+        setTimeout(() => {
+            if (flashScreen) {
+                flashScreen.classList.add("active");
+            }
+        }, 500);
+
+        // Bước 3: Khi màn hình đã trắng chói hoàn toàn (sau 1.3s), tiến hành chuyển trang
+        setTimeout(() => {
+            window.location.href = "nhungloidan.html";
+        }, 1300);
+    });
+}
 
 
     /* ==========================================
