@@ -113,40 +113,35 @@ body{
 
 
 
-/* ================= FLOWER ================= */
-
+/* ==========================================
+        HOA CẨM TÚ CẦU
+========================================== */
 
 .flowers{
-
     position:absolute;
-
-    bottom:0;
-
-    width:420px;
+    bottom:20px;
+    width:400px;
     height:300px;
-
     z-index:15;
-
 }
 
 
+/* bên trái */
 
 .left-flowers{
-    left:0;
+    left:20px;
 }
 
+
+/* bên phải */
 
 .right-flowers{
-
-    right:0;
-
+    right:20px;
     transform:scaleX(-1);
-
 }
 
 
-
-/* tạo cụm hoa cẩm tú cầu */
+/* từng cụm hoa */
 
 .flowers::before,
 .flowers::after{
@@ -155,25 +150,28 @@ body{
 
     position:absolute;
 
+    width:220px;
+    height:220px;
+
     border-radius:50%;
 
 
     background:
-
-    radial-gradient(
-        circle at 30% 30%,
-        #ffffff,
-        #9fc5ff 15%,
-        #638cff 35%,
-        #304bb8 60%,
-        #18245f 80%
-    );
+    radial-gradient(circle at 30% 30%,
+    #ffffff,
+    #9cc7ff 20%,
+    #557cff 45%,
+    #243b9f 70%,
+    transparent 72%);
 
 
     box-shadow:
 
-    0 0 40px rgba(100,150,255,.8);
+    0 0 30px #6ea8ff;
 
+
+    animation:
+    flowerFloat 4s infinite ease-in-out;
 
 }
 
@@ -181,11 +179,8 @@ body{
 
 .flowers::before{
 
-    width:220px;
-    height:220px;
-
-    bottom:20px;
-    left:30px;
+    left:20px;
+    bottom:0;
 
 }
 
@@ -193,17 +188,22 @@ body{
 
 .flowers::after{
 
-    width:180px;
-    height:180px;
-
-    bottom:110px;
-    left:170px;
+    right:20px;
+    bottom:70px;
 
 }
 
 
 
+@keyframes flowerFloat{
 
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
 
 /* ================= ROAD ================= */
 
@@ -334,7 +334,9 @@ body{
 
 
 
-/* ================= GIFT ================= */
+/* ==========================================
+        HỘP QUÀ
+========================================== */
 
 
 .gift-container{
@@ -345,11 +347,62 @@ body{
 
     bottom:100px;
 
-    transform:translateX(-50%);
+    transform:translateX(-50%) scale(0);
 
-    z-index:40;
+    z-index:50;
+
+
+    transition:1s;
+
 
 }
+
+
+/* hiện ra sau loading */
+
+.gift-container.show{
+
+    transform:
+    translateX(-50%)
+    scale(1);
+
+
+}
+
+
+
+
+.gift{
+
+    width:180px;
+
+    height:160px;
+
+    position:relative;
+
+    cursor:pointer;
+
+
+    animation:
+
+    giftFloat 3s infinite ease-in-out;
+
+
+}
+
+
+
+@keyframes giftFloat{
+
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
 
 
 
@@ -357,47 +410,61 @@ body{
 
 .gift-body{
 
-    width:230px;
 
-    height:170px;
+    position:absolute;
 
-    background:#123274;
+    bottom:0;
+
+    width:180px;
+
+    height:110px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #284b9b,
+    #071b55
+    );
+
 
     border-radius:0 0 15px 15px;
+
+
+    box-shadow:
+
+    0 0 40px rgba(100,160,255,.8);
 
 }
 
 
 
-/* nắp */
+
+/* nắp hộp */
 
 .gift-top{
 
 
-    width:250px;
-
-    height:45px;
-
-
-    background:#315db5;
-
-
     position:absolute;
 
-    top:-35px;
 
-    left:-10px;
+    top:25px;
+
+
+    width:180px;
+
+    height:35px;
+
+
+    background:#4169e1;
 
 
     border-radius:10px;
 
 
-    transform-origin:center bottom;
-
-
-    transition:1s;
-
 }
+
 
 
 
@@ -408,33 +475,40 @@ body{
 
     position:absolute;
 
-    width:35px;
 
-    height:170px;
+    left:80px;
 
-    background:#ffd866;
+    width:20px;
 
-    left:98px;
+    height:135px;
+
+
+    background:#ffd85c;
+
 
 }
 
 
 
-/* dây ngang */
 
+/* dây ngang */
 
 .gift-ribbon-h{
 
 
     position:absolute;
 
-    width:230px;
 
-    height:30px;
+    top:60px;
 
-    background:#ffd866;
 
-    top:65px;
+    width:180px;
+
+    height:20px;
+
+
+    background:#ffd85c;
+
 
 }
 
@@ -442,18 +516,26 @@ body{
 
 /* nơ */
 
+
 .gift-bow{
 
-    width:70px;
-    height:40px;
-
-    background:#ffd866;
-
-    border-radius:50%;
 
     position:absolute;
 
-    top:-80px;
+
+    top:-20px;
+
+
+    width:60px;
+
+    height:45px;
+
+
+    background:#ffd85c;
+
+
+    border-radius:50%;
+
 
 }
 
@@ -461,28 +543,37 @@ body{
 
 .bow-left{
 
-    left:55px;
+    left:35px;
+
+    transform:rotate(-30deg);
 
 }
+
 
 
 .bow-right{
 
-    right:55px;
+    right:35px;
+
+    transform:rotate(30deg);
 
 }
 
 
 
-/* hiệu ứng mở quà */
+
+/* mở hộp */
 
 .gift.open .gift-top{
 
+
     transform:
 
-    rotate(-25deg)
+    translateY(-60px)
+    rotateX(40deg);
 
-    translateY(-30px);
+
+    transition:1s;
 
 }
 
@@ -490,28 +581,8 @@ body{
 
 .gift.open{
 
-    animation:
 
-    giftGlow 1s infinite alternate;
-
-}
-
-
-
-@keyframes giftGlow{
-
-    from{
-
-        filter:drop-shadow(0 0 10px #ffd866);
-
-    }
-
-
-    to{
-
-        filter:drop-shadow(0 0 40px #ffd866);
-
-    }
+    animation:none;
 
 }
 
