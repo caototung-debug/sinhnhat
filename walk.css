@@ -309,66 +309,83 @@ body{
 
 
 
-/* cụm hoa lớn */
-
-.flowers::before,
-.flowers::after{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    border-radius:50%;
-
-
-    width:230px;
-
-    height:230px;
-
-
-
-    background:
-
-
-    radial-gradient(
-        circle,
-        #d5e8ff 5%,
-        #8bb8ff 20%,
-        #4169e1 45%,
-        #172554 70%,
-        transparent 72%
-    );
-
-
-
-    box-shadow:
-
-
-    0 0 35px rgba(120,180,255,.8);
-
-
-}
-
+/* ======================================
+        HOA CẨM TÚ CẦU THẬT HƠN
+====================================== */
 
 
 .flowers::before{
 
-    bottom:20px;
+    content:"";
 
-    left:20px;
+    position:absolute;
+
+    width:420px;
+
+    height:300px;
+
+    bottom:0;
+
+
+    background:
+
+    radial-gradient(circle at 15% 80%,
+    #cfe4ff 0 12px,
+    #5478ff 13px 25px,
+    transparent 26px),
+
+    radial-gradient(circle at 35% 65%,
+    #a9caff 0 15px,
+    #4169e1 16px 32px,
+    transparent 33px),
+
+    radial-gradient(circle at 55% 75%,
+    #dbeaff 0 14px,
+    #638cff 15px 30px,
+    transparent 31px),
+
+    radial-gradient(circle at 75% 60%,
+    #b9d5ff 0 16px,
+    #3655c5 17px 35px,
+    transparent 36px),
+
+    radial-gradient(circle at 90% 80%,
+    #d8e8ff 0 12px,
+    #587cff 13px 28px,
+    transparent 29px);
+
+
+    filter:
+
+    drop-shadow(
+        0 0 20px rgba(100,150,255,.8)
+    );
 
 }
 
 
 
+
 .flowers::after{
 
-    bottom:100px;
+    content:"";
 
-    left:170px;
+    position:absolute;
+
+    width:350px;
+
+    height:200px;
+
+    bottom:0;
+
+
+    background:
+
+    radial-gradient(
+        ellipse,
+        rgba(30,60,120,.7),
+        transparent 70%
+    );
 
 }
 
@@ -705,5 +722,23 @@ body{
         translateY(-15px);
 
     }
+
+}
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        transparent 30%,
+        rgba(0,0,30,.6)
+    );
 
 }
