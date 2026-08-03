@@ -471,95 +471,157 @@ body{
 
 
 /* ======================================
-        HOA CẨM TÚ CẦU
+        HOA CẨM TÚ CẦU THẬT HƠN
 ====================================== */
+
 
 .flowers{
 
     position:absolute;
 
-    bottom:20px;
+    bottom:-20px;
 
     width:500px;
 
     height:300px;
 
-    z-index:20;
+    z-index:10;
 
 }
 
+
+/* bên trái */
 
 .left-flowers{
 
-    left:0;
+    left:-50px;
 
 }
 
 
+
+/* bên phải */
+
 .right-flowers{
 
-    right:0;
+    right:-50px;
 
     transform:scaleX(-1);
 
 }
 
 
-/* từng cụm hoa */
 
-.flowers::before,
-.flowers::after{
+/* tạo cụm hoa */
+
+.flowers::before{
+
 
     content:"";
 
+
     position:absolute;
+
+
+    width:260px;
+
+    height:260px;
+
 
     border-radius:50%;
 
 
+
     background:
+
     radial-gradient(
-        circle,
-        #ffffff,
-        #b7d5ff 15%,
-        #6d8cff 35%,
-        #4055c7 60%,
-        transparent 70%
+        circle at 20% 20%,
+        #ffffff 0 8%,
+        transparent 10%
+    ),
+
+    radial-gradient(
+        circle at 40% 30%,
+        #bcd7ff 0 10%,
+        transparent 12%
+    ),
+
+    radial-gradient(
+        circle at 60% 25%,
+        #8bb8ff 0 10%,
+        transparent 12%
+    ),
+
+    radial-gradient(
+        circle at 70% 50%,
+        #6f8cff 0 12%,
+        transparent 14%
+    ),
+
+    radial-gradient(
+        circle at 35% 65%,
+        #9fc5ff 0 12%,
+        transparent 14%
+    ),
+
+    radial-gradient(
+        circle at 55% 75%,
+        #4169e1 0 15%,
+        transparent 17%
     );
 
 
-    box-shadow:
-
-    0 0 40px rgba(120,160,255,.9);
+    filter:
+    drop-shadow(
+        0 0 25px rgba(100,150,255,.8)
+    );
 
 
 }
 
 
-/* hoa lớn */
 
-.flowers::before{
-
-    width:260px;
-    height:260px;
-
-    bottom:0;
-
-    left:30px;
-
-}
-
-
-/* hoa nhỏ phía sau */
+/* hoa trái */
 
 .flowers::after{
 
-    width:200px;
-    height:200px;
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+    height:180px;
+
+
+    left:160px;
 
     bottom:80px;
 
-    left:200px;
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    radial-gradient(
+        circle,
+        #d9eaff,
+        #7aa7ff 40%,
+        #3548b8 70%,
+        transparent 72%
+    );
+
+
+    filter:
+    drop-shadow(
+        0 0 20px rgba(120,160,255,.8)
+    );
 
 }
 
