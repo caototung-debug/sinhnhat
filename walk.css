@@ -179,7 +179,9 @@ body{
 
 
 
-/* ================= HOA CẨM TÚ CẦU ================= */
+/* ======================================
+        HOA CẨM TÚ CẦU THẬT HƠN
+====================================== */
 
 
 .flowers{
@@ -190,86 +192,145 @@ body{
 
     width:500px;
 
-    height:330px;
+    height:300px;
 
-    z-index:5;
+    z-index:10;
 
 }
 
 
-
-/* trái */
-
+/* bên trái */
 
 .left-flowers{
 
-    left:0;
+    left:-50px;
 
 }
 
 
 
-/* phải */
-
+/* bên phải */
 
 .right-flowers{
 
-    right:0;
+    right:-50px;
+
+    transform:scaleX(-1);
 
 }
 
 
 
-/* tạo nhiều cụm hoa */
+/* tạo cụm hoa */
 
-
-.flowers:before,
-.flowers:after{
+.flowers::before{
 
 
     content:"";
 
+
     position:absolute;
 
-    width:180px;
-    height:180px;
+
+    width:260px;
+
+    height:260px;
+
 
     border-radius:50%;
+
+
+
+    background:
+
+    radial-gradient(
+        circle at 20% 20%,
+        #ffffff 0 8%,
+        transparent 10%
+    ),
+
+    radial-gradient(
+        circle at 40% 30%,
+        #bcd7ff 0 10%,
+        transparent 12%
+    ),
+
+    radial-gradient(
+        circle at 60% 25%,
+        #8bb8ff 0 10%,
+        transparent 12%
+    ),
+
+    radial-gradient(
+        circle at 70% 50%,
+        #6f8cff 0 12%,
+        transparent 14%
+    ),
+
+    radial-gradient(
+        circle at 35% 65%,
+        #9fc5ff 0 12%,
+        transparent 14%
+    ),
+
+    radial-gradient(
+        circle at 55% 75%,
+        #4169e1 0 15%,
+        transparent 17%
+    );
+
+
+    filter:
+    drop-shadow(
+        0 0 25px rgba(100,150,255,.8)
+    );
+
+
+}
+
+
+
+/* hoa trái */
+
+.flowers::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+    height:180px;
+
+
+    left:160px;
+
+    bottom:80px;
+
+
+
+    border-radius:50%;
+
 
 
     background:
 
     radial-gradient(
         circle,
-        #e1ecff 5%,
-        #91b8ff 25%,
-        #5275ff 45%,
-        #243b88 70%
+        #d9eaff,
+        #7aa7ff 40%,
+        #3548b8 70%,
+        transparent 72%
     );
 
 
-    box-shadow:
-
-    0 0 40px rgba(120,160,255,.8);
-
-
-}
-
-
-
-.flowers:before{
-
-    bottom:20px;
-    left:50px;
-
-}
-
-
-
-.flowers:after{
-
-    bottom:100px;
-    left:200px;
+    filter:
+    drop-shadow(
+        0 0 20px rgba(120,160,255,.8)
+    );
 
 }
 
@@ -467,168 +528,6 @@ body{
     0 0 20px #fff4a8;
 
 }
-
-
-
-/* ======================================
-        HOA CẨM TÚ CẦU THẬT HƠN
-====================================== */
-
-
-.flowers{
-
-    position:absolute;
-
-    bottom:-20px;
-
-    width:500px;
-
-    height:300px;
-
-    z-index:10;
-
-}
-
-
-/* bên trái */
-
-.left-flowers{
-
-    left:-50px;
-
-}
-
-
-
-/* bên phải */
-
-.right-flowers{
-
-    right:-50px;
-
-    transform:scaleX(-1);
-
-}
-
-
-
-/* tạo cụm hoa */
-
-.flowers::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:260px;
-
-    height:260px;
-
-
-    border-radius:50%;
-
-
-
-    background:
-
-    radial-gradient(
-        circle at 20% 20%,
-        #ffffff 0 8%,
-        transparent 10%
-    ),
-
-    radial-gradient(
-        circle at 40% 30%,
-        #bcd7ff 0 10%,
-        transparent 12%
-    ),
-
-    radial-gradient(
-        circle at 60% 25%,
-        #8bb8ff 0 10%,
-        transparent 12%
-    ),
-
-    radial-gradient(
-        circle at 70% 50%,
-        #6f8cff 0 12%,
-        transparent 14%
-    ),
-
-    radial-gradient(
-        circle at 35% 65%,
-        #9fc5ff 0 12%,
-        transparent 14%
-    ),
-
-    radial-gradient(
-        circle at 55% 75%,
-        #4169e1 0 15%,
-        transparent 17%
-    );
-
-
-    filter:
-    drop-shadow(
-        0 0 25px rgba(100,150,255,.8)
-    );
-
-
-}
-
-
-
-/* hoa trái */
-
-.flowers::after{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:180px;
-
-    height:180px;
-
-
-    left:160px;
-
-    bottom:80px;
-
-
-
-    border-radius:50%;
-
-
-
-    background:
-
-    radial-gradient(
-        circle,
-        #d9eaff,
-        #7aa7ff 40%,
-        #3548b8 70%,
-        transparent 72%
-    );
-
-
-    filter:
-    drop-shadow(
-        0 0 20px rgba(120,160,255,.8)
-    );
-
-}
-
-
-
-
-
 
 /* ======================================
         HỘP QUÀ
