@@ -27,7 +27,7 @@ body {
     z-index: 0;
 }
 
-/* ================= MOON (Sửa lỗi viền đen) ================= */
+/* ================= MOON ================= */
 .moon {
     position: absolute;
     width: 120px;
@@ -75,7 +75,7 @@ body {
     100% { transform: translateX(0); }
 }
 
-/* ================= LỐI ĐI HUYỀN ẢO ================= */
+/* ================= CON ĐƯỜNG ================= */
 .road {
     position: absolute;
     bottom: 0;
@@ -85,7 +85,7 @@ body {
     height: 400px;
     background: linear-gradient(
         to top,
-        rgba(41, 72, 125, 0.4) 0%,
+        rgba(56, 112, 196, 0.35) 0%,
         rgba(20, 40, 80, 0.15) 70%,
         transparent 100%
     );
@@ -94,81 +94,84 @@ body {
     z-index: 5;
 }
 
-/* ================= HOA CẨM TÚ CẦU NAVY ================= */
+/* ================= HOA CẨM TÚ CẦU NAVY PHÁT SÁNG ================= */
 .hydrangea-field {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     width: 100%;
-    height: 280px;
+    height: 320px;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
-    z-index: 15;
+    z-index: 25; /* Đẩy z-index lên trên con đường và background */
 }
 
 .flower-cluster {
     position: relative;
-    width: 350px;
+    width: 380px;
     height: 100%;
 }
 
-/* Cụm hoa tạo hình bằng nhiều lớp Radial Gradients */
+/* Tạo lớp các đốm hoa cẩm tú cầu bằng Radial Gradient tô sáng */
 .flower-cluster::before,
 .flower-cluster::after {
     content: "";
     position: absolute;
     border-radius: 50%;
-    filter: drop-shadow(0 0 12px rgba(13, 37, 86, 0.9));
+    /* Thêm hiệu ứng dạ quang tỏa sáng cho bụi hoa */
+    filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.7));
 }
 
 /* Bụi hoa bên trái */
 .left-field::before {
-    width: 260px;
-    height: 200px;
-    bottom: 10px;
-    left: -40px;
+    width: 280px;
+    height: 220px;
+    bottom: 0px;
+    left: -30px;
     background: 
-        radial-gradient(circle at 30% 30%, #2b4c7e 10%, transparent 40%),
-        radial-gradient(circle at 70% 40%, #162a52 10%, transparent 40%),
-        radial-gradient(circle at 40% 70%, #0d1b3a 15%, transparent 50%),
-        #122244;
+        radial-gradient(circle at 30% 30%, #93c5fd 0%, #3b82f6 12%, transparent 30%),
+        radial-gradient(circle at 65% 35%, #bfdbfe 0%, #2563eb 15%, transparent 35%),
+        radial-gradient(circle at 45% 65%, #60a5fa 0%, #1d4ed8 18%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #93c5fd 0%, #1e40af 15%, transparent 35%),
+        #1e3a8a;
     border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
 }
 
 .left-field::after {
-    width: 200px;
-    height: 160px;
-    bottom: 60px;
-    left: 100px;
+    width: 220px;
+    height: 180px;
+    bottom: 50px;
+    left: 120px;
     background: 
-        radial-gradient(circle at 40% 30%, #3a629b 10%, transparent 40%),
-        radial-gradient(circle at 60% 60%, #1c335e 10%, transparent 40%),
-        #0a152e;
+        radial-gradient(circle at 35% 35%, #e0f2fe 0%, #38bdf8 15%, transparent 35%),
+        radial-gradient(circle at 65% 60%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        #172554;
     border-radius: 50%;
 }
 
 /* Bụi hoa bên phải */
 .right-field::before {
-    width: 280px;
-    height: 220px;
-    bottom: 0;
-    right: -30px;
+    width: 300px;
+    height: 240px;
+    bottom: 0px;
+    right: -20px;
     background: 
-        radial-gradient(circle at 40% 30%, #2b4c7e 10%, transparent 40%),
-        radial-gradient(circle at 60% 60%, #112144 10%, transparent 40%),
-        #0e1a38;
+        radial-gradient(circle at 40% 30%, #bfdbfe 0%, #2563eb 15%, transparent 35%),
+        radial-gradient(circle at 70% 40%, #93c5fd 0%, #1d4ed8 15%, transparent 35%),
+        radial-gradient(circle at 30% 70%, #60a5fa 0%, #1e40af 18%, transparent 40%),
+        #1e3a8a;
     border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
 }
 
 .right-field::after {
-    width: 210px;
-    height: 170px;
-    bottom: 70px;
-    right: 120px;
+    width: 230px;
+    height: 190px;
+    bottom: 60px;
+    right: 130px;
     background: 
-        radial-gradient(circle at 30% 40%, #3a629b 10%, transparent 40%),
-        radial-gradient(circle at 70% 30%, #182d53 10%, transparent 40%),
-        #0a1329;
+        radial-gradient(circle at 30% 40%, #e0f2fe 0%, #38bdf8 15%, transparent 35%),
+        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        #172554;
     border-radius: 50%;
 }
 
@@ -224,7 +227,7 @@ body {
     left: 50%;
     bottom: 110px;
     transform: translateX(-50%);
-    z-index: 25;
+    z-index: 28;
 }
 
 .gift {
@@ -292,13 +295,13 @@ body {
 /* ================= ĐOM ĐÓM (FIREFLIES) ================= */
 .firefly {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     background: #fef08a;
     border-radius: 50%;
     box-shadow: 0 0 12px #fef08a, 0 0 20px #fde047;
     animation: flyGlow 4s infinite ease-in-out alternate;
-    z-index: 20;
+    z-index: 30;
 }
 
 @keyframes flyGlow {
