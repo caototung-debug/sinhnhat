@@ -94,39 +94,58 @@ body {
     z-index: 5;
 }
 
-/* ================= VƯỜN HOA CẨM TÚ CẦU SVG ================= */
+/* ================= HOA CẨM TÚ CẦU PNG THẬT ================= */
 .hydrangea-field {
     position: absolute;
     bottom: -20px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 380px;
     pointer-events: none;
     z-index: 25;
     overflow: hidden;
 }
 
-.flower-bush {
+.real-flower {
     position: absolute;
-    bottom: 0;
-    width: 500px; /* Tăng kích thước bụi hoa */
-    height: 500px;
+    bottom: -10px;
+    width: 450px;
+    height: 380px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Hiệu ứng phát sáng màu xanh Navy/Cyan cho hoa */
+    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.7)) brightness(0.9) contrast(1.1);
+    animation: flowerSway 5s infinite ease-in-out alternate;
 }
 
-.left-bush {
-    left: -50px;
-    animation: bushSway 6s infinite ease-in-out alternate;
+/* Bụi hoa bên trái */
+.left-flower {
+    left: -60px;
+    background-image: url('https://png.pngtree.com/png-clipart/20230914/original/pngtree-hydrangea-flower-blue-png-image_12158823.png');
+    background-position: bottom left;
 }
 
-.right-bush {
-    right: -50px;
-    animation: bushSway 6s infinite ease-in-out alternate-reverse;
+/* Bụi hoa bên phải */
+.right-flower {
+    right: -60px;
+    background-image: url('https://png.pngtree.com/png-clipart/20230914/original/pngtree-hydrangea-flower-blue-png-image_12158823.png');
+    background-position: bottom right;
+    transform: scaleX(-1); /* Lật ngược lại cho tự nhiên */
 }
 
-/* Đung đung nhẹ như trong gió */
-@keyframes bushSway {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-10px) rotate(1.5deg); }
+/* Đung đung nhẹ */
+@keyframes flowerSway {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-8px) scale(1.02); }
+}
+
+.right-flower {
+    animation: flowerSwayRight 5s infinite ease-in-out alternate;
+}
+
+@keyframes flowerSwayRight {
+    0% { transform: scaleX(-1) translateY(0); }
+    100% { transform: scaleX(-1) translateY(-8px); }
 }
 
 /* ================= LOADING ================= */
