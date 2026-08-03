@@ -27,7 +27,7 @@ body {
     z-index: 0;
 }
 
-/* ================= MOON ================= */
+/* ================= MOON (MẶT TRĂNG) ================= */
 .moon {
     position: absolute;
     width: 120px;
@@ -42,7 +42,7 @@ body {
         0 0 100px rgba(90, 145, 255, 0.4);
 }
 
-/* ================= STARS ================= */
+/* ================= STARS (SAO ĐÊM) ================= */
 .stars {
     position: absolute;
     inset: 0;
@@ -94,84 +94,151 @@ body {
     z-index: 5;
 }
 
-/* ================= HOA CẨM TÚ CẦU NAVY PHÁT SÁNG ================= */
+/* ================= VƯỜN HOA & RỪNG 3 LỚP (NAVY & CYAN) ================= */
 .hydrangea-field {
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
     width: 100%;
-    height: 380px; /* Tăng chiều cao để hoa vươn cao hơn */
-    display: flex;
-    justify-content: space-between;
+    height: 480px; /* Độ cao đủ lớn bao phủ không gian */
     pointer-events: none;
     z-index: 25;
 }
 
+/* 1. TÁN CÂY / BỤI NỀN TỐI TẠO KHUNG RỪNG */
+.dark-bush {
+    position: absolute;
+    bottom: 0;
+    background: #061126;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 20px #020617);
+}
+
+.left-dark {
+    width: 500px;
+    height: 420px;
+    left: -120px;
+    bottom: -50px;
+}
+
+.right-dark {
+    width: 520px;
+    height: 440px;
+    right: -130px;
+    bottom: -50px;
+}
+
+/* 2. CỤM HOA CHÍNH (TO, PHÁT SÁNG VƯƠN CAO) */
 .flower-cluster {
-    position: relative;
-    width: 420px; /* Mở rộng chiều rộng cụm hoa */
+    position: absolute;
+    bottom: 0;
     height: 100%;
 }
 
 .flower-cluster::before,
-.flower-cluster::after {
+.flower-cluster::after,
+.small-cluster::before {
     content: "";
     position: absolute;
     border-radius: 50%;
-    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.8));
+    filter: drop-shadow(0 0 22px rgba(147, 197, 253, 0.85));
 }
 
-/* Bụi hoa bên trái - Kéo cao lên trên và to ra */
+/* Bụi hoa to bên trái */
+.left-field {
+    left: 0;
+    width: 450px;
+}
+
 .left-field::before {
-    width: 320px;
-    height: 260px;
-    bottom: 20px; /* Đẩy vươn lên trên */
-    left: -20px;
+    width: 360px;
+    height: 290px;
+    bottom: 30px;
+    left: -30px;
     background: 
-        radial-gradient(circle at 30% 30%, #bfdbfe 0%, #3b82f6 15%, transparent 35%),
-        radial-gradient(circle at 65% 35%, #e0f2fe 0%, #2563eb 18%, transparent 40%),
-        radial-gradient(circle at 45% 65%, #60a5fa 0%, #1d4ed8 20%, transparent 45%),
-        radial-gradient(circle at 80% 70%, #93c5fd 0%, #1e40af 18%, transparent 40%),
+        radial-gradient(circle at 30% 30%, #ffffff 0%, #60a5fa 15%, transparent 35%),
+        radial-gradient(circle at 65% 35%, #bfdbfe 0%, #2563eb 18%, transparent 40%),
+        radial-gradient(circle at 45% 65%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
+        radial-gradient(circle at 80% 70%, #60a5fa 0%, #1e40af 18%, transparent 40%),
         #1e3a8a;
-    border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
 }
 
 .left-field::after {
-    width: 250px;
-    height: 200px;
-    bottom: 100px; /* Đẩy cụm hoa phụ lên cao hơn */
-    left: 140px;
+    width: 280px;
+    height: 230px;
+    bottom: 140px;
+    left: 120px;
     background: 
-        radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 18%, transparent 40%),
-        radial-gradient(circle at 65% 60%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
+        radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 18%, transparent 38%),
+        radial-gradient(circle at 65% 60%, #bfdbfe 0%, #1d4ed8 20%, transparent 45%),
         #172554;
-    border-radius: 50%;
 }
 
-/* Bụi hoa bên phải - Kéo cao lên trên và to ra */
+/* Bụi hoa to bên phải */
+.right-field {
+    right: 0;
+    width: 450px;
+}
+
 .right-field::before {
-    width: 340px;
-    height: 280px;
-    bottom: 10px;
-    right: -10px;
+    width: 380px;
+    height: 310px;
+    bottom: 20px;
+    right: -20px;
     background: 
-        radial-gradient(circle at 40% 30%, #e0f2fe 0%, #2563eb 18%, transparent 40%),
-        radial-gradient(circle at 70% 40%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        radial-gradient(circle at 40% 30%, #ffffff 0%, #2563eb 18%, transparent 38%),
+        radial-gradient(circle at 70% 40%, #bfdbfe 0%, #1d4ed8 18%, transparent 40%),
         radial-gradient(circle at 30% 70%, #60a5fa 0%, #1e40af 22%, transparent 45%),
         #1e3a8a;
-    border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
 }
 
 .right-field::after {
-    width: 260px;
-    height: 210px;
-    bottom: 110px;
-    right: 150px;
+    width: 290px;
+    height: 240px;
+    bottom: 150px;
+    right: 130px;
     background: 
-        radial-gradient(circle at 30% 40%, #ffffff 0%, #38bdf8 18%, transparent 40%),
-        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
+        radial-gradient(circle at 30% 40%, #ffffff 0%, #38bdf8 18%, transparent 38%),
+        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1240a8 20%, transparent 45%),
         #172554;
-    border-radius: 50%;
+}
+
+/* 3. BỤI HOA PHỤ NẰM SÁT CON ĐƯỜNG (LẤP KHOẢNG TRỐNG) */
+.small-cluster {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.left-mid {
+    left: 220px;
+    bottom: 10px;
+}
+
+.left-mid::before {
+    width: 200px;
+    height: 160px;
+    bottom: 10px;
+    left: 0;
+    background: 
+        radial-gradient(circle at 50% 40%, #e0f2fe 0%, #2563eb 20%, transparent 45%),
+        #1e3a8a;
+}
+
+.right-mid {
+    right: 230px;
+    bottom: 10px;
+}
+
+.right-mid::before {
+    width: 210px;
+    height: 170px;
+    bottom: 10px;
+    right: 0;
+    background: 
+        radial-gradient(circle at 40% 40%, #e0f2fe 0%, #2563eb 20%, transparent 45%),
+        #1e3a8a;
 }
 
 /* ================= NỘI DUNG / TEXT ================= */
@@ -290,6 +357,12 @@ body {
 
 .bow-left { left: 22px; transform: rotate(-25deg); }
 .bow-right { right: 22px; transform: rotate(25deg); }
+
+/* Mở nắp hộp quà khi click */
+.gift.open .gift-top {
+    transform: translateY(-50px) rotateX(45deg);
+    transition: transform 0.8s ease;
+}
 
 /* ================= ĐOM ĐÓM (FIREFLIES) ================= */
 .firefly {
