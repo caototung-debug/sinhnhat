@@ -1,4 +1,3 @@
-/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -13,36 +12,25 @@ body {
     background: #020617;
 }
 
-/* ================= BACKGROUND ================= */
 .background {
     position: fixed;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        #020b18 0%,
-        #0a192f 50%,
-        #030d1a 100%
-    );
+    background: linear-gradient(to bottom, #020b18 0%, #0a192f 50%, #030d1a 100%);
     overflow: hidden;
     z-index: 0;
 }
 
-/* ================= MOON (MẶT TRĂNG) ================= */
 .moon {
     position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 50px;
-    right: 12%;
+    width: 110px;
+    height: 110px;
+    top: 40px;
+    right: 10%;
     border-radius: 50%;
     background: #ffffff;
-    box-shadow: 
-        0 0 20px #ffffff,
-        0 0 50px rgba(165, 203, 255, 0.8),
-        0 0 100px rgba(90, 145, 255, 0.4);
+    box-shadow: 0 0 20px #ffffff, 0 0 50px rgba(165, 203, 255, 0.8);
 }
 
-/* ================= STARS (SAO ĐÊM) ================= */
 .stars {
     position: absolute;
     inset: 0;
@@ -51,109 +39,58 @@ body {
     opacity: 0.3;
 }
 
-/* ================= SƯƠNG MÙ (FOG) ================= */
-.fog {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%;
-    height: 250px;
-    background: linear-gradient(
-        to top, 
-        rgba(15, 28, 54, 0.7) 0%, 
-        rgba(30, 58, 110, 0.3) 50%, 
-        transparent 100%
-    );
-    filter: blur(15px);
-    z-index: 10;
-    animation: fogMove 25s infinite linear;
-}
-
-@keyframes fogMove {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-25%); }
-    100% { transform: translateX(0); }
-}
-
-/* ================= CON ĐƯỜNG ================= */
 .road {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 320px;
-    height: 400px;
-    background: linear-gradient(
-        to top,
-        rgba(56, 112, 196, 0.35) 0%,
-        rgba(20, 40, 80, 0.15) 70%,
-        transparent 100%
-    );
+    height: 380px;
+    background: linear-gradient(to top, rgba(56, 112, 196, 0.35) 0%, transparent 100%);
     clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
-    filter: blur(2px);
     z-index: 5;
 }
 
-/* ================= HOA CẨM TÚ CẦU PNG THẬT ================= */
-.hydrangea-field {
+/* KHU VỰC VẼ HOA CANVAS */
+#flowerCanvas {
     position: absolute;
-    bottom: -20px;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 380px;
+    height: 100%;
     pointer-events: none;
-    z-index: 25;
-    overflow: hidden;
+    z-index: 15;
 }
 
-.real-flower {
+/* NỘI DUNG TEXT (Z-INDEX CAO ĐỂ KHÔNG BỊ PHỦ) */
+.content {
     position: absolute;
-    bottom: -10px;
-    width: 450px;
-    height: 380px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* Hiệu ứng phát sáng màu xanh Navy/Cyan cho hoa */
-    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.7)) brightness(0.9) contrast(1.1);
-    animation: flowerSway 5s infinite ease-in-out alternate;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    z-index: 40;
 }
 
-/* Bụi hoa bên trái */
-.left-flower {
-    left: -60px;
-    background-image: url('https://png.pngtree.com/png-clipart/20230914/original/pngtree-hydrangea-flower-blue-png-image_12158823.png');
-    background-position: bottom left;
+.content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #f0f6ff;
+    text-shadow: 0 0 20px rgba(142, 197, 255, 0.8);
+    min-height: 60px;
 }
 
-/* Bụi hoa bên phải */
-.right-flower {
-    right: -60px;
-    background-image: url('https://png.pngtree.com/png-clipart/20230914/original/pngtree-hydrangea-flower-blue-png-image_12158823.png');
-    background-position: bottom right;
-    transform: scaleX(-1); /* Lật ngược lại cho tự nhiên */
+.content p {
+    margin-top: 10px;
+    color: #b0d0ff;
+    font-size: 16px;
 }
 
-/* Đung đung nhẹ */
-@keyframes flowerSway {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-8px) scale(1.02); }
-}
-
-.right-flower {
-    animation: flowerSwayRight 5s infinite ease-in-out alternate;
-}
-
-@keyframes flowerSwayRight {
-    0% { transform: scaleX(-1) translateY(0); }
-    100% { transform: scaleX(-1) translateY(-8px); }
-}
-
-/* ================= LOADING ================= */
 .progress {
-    width: 260px;
+    width: 250px;
     height: 3px;
-    margin: 25px auto 0;
-    background: rgba(255, 255, 255, 0.15);
+    margin: 20px auto 0;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -161,22 +98,21 @@ body {
 .progress-bar {
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, #508cff, #ffffff);
-    border-radius: 10px;
+    background: white;
 }
 
-/* ================= HỘP QUÀ ================= */
+/* HỘP QUÀ */
 .gift-container {
     position: absolute;
     left: 50%;
-    bottom: 110px;
+    bottom: 100px;
     transform: translateX(-50%);
-    z-index: 28;
+    z-index: 30;
 }
 
 .gift {
-    width: 120px;
-    height: 110px;
+    width: 110px;
+    height: 100px;
     position: relative;
     cursor: pointer;
     animation: giftFloat 3.5s infinite ease-in-out;
@@ -190,8 +126,8 @@ body {
 .gift-body {
     position: absolute;
     bottom: 0;
-    width: 120px;
-    height: 75px;
+    width: 110px;
+    height: 70px;
     background: linear-gradient(135deg, #1e3a8a, #0f172a);
     border-radius: 0 0 8px 8px;
     box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
@@ -199,62 +135,55 @@ body {
 
 .gift-top {
     position: absolute;
-    top: 20px;
-    width: 128px;
+    top: 18px;
+    width: 118px;
     left: -4px;
-    height: 22px;
+    height: 20px;
     background: #2563eb;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .gift-ribbon-v {
     position: absolute;
-    left: 52px;
+    left: 47px;
     width: 16px;
-    height: 95px;
+    height: 88px;
     background: #fbbf24;
 }
 
 .gift-ribbon-h {
     position: absolute;
-    top: 45px;
-    width: 120px;
+    top: 40px;
+    width: 110px;
     height: 14px;
     background: #fbbf24;
 }
 
 .gift-bow {
     position: absolute;
-    top: -12px;
-    width: 40px;
-    height: 30px;
+    top: -10px;
+    width: 36px;
+    height: 26px;
     background: #fbbf24;
     border-radius: 50%;
 }
 
-.bow-left { left: 22px; transform: rotate(-25deg); }
-.bow-right { right: 22px; transform: rotate(25deg); }
+.bow-left { left: 20px; transform: rotate(-25deg); }
+.bow-right { right: 20px; transform: rotate(25deg); }
 
-/* Mở nắp hộp quà khi click */
-.gift.open .gift-top {
-    transform: translateY(-50px) rotateX(45deg);
-    transition: transform 0.8s ease;
-}
-
-/* ================= ĐOM ĐÓM (FIREFLIES) ================= */
+/* FIREFLIES */
 .firefly {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background: #fef08a;
     border-radius: 50%;
-    box-shadow: 0 0 12px #fef08a, 0 0 20px #fde047;
-    animation: flyGlow 4s infinite ease-in-out alternate;
-    z-index: 30;
+    box-shadow: 0 0 10px #fef08a;
+    animation: flyGlow 3s infinite ease-in-out alternate;
+    z-index: 20;
 }
 
 @keyframes flyGlow {
-    0% { opacity: 0.2; transform: scale(0.8) translateY(0); }
-    100% { opacity: 1; transform: scale(1.4) translateY(-15px); }
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.3); }
 }
