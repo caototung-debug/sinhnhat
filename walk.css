@@ -78,6 +78,7 @@ body {
     color: #f0f6ff;
     text-shadow: 0 0 20px rgba(142, 197, 255, 0.8);
     min-height: 60px;
+    white-space: pre-wrap;
 }
 
 .content p {
