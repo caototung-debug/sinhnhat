@@ -542,190 +542,20 @@ body{
 
     bottom:120px;
 
-
     transform:translateX(-50%);
 
+    z-index:50;
 
-    width:260px;
+    cursor:pointer;
 
-    height:220px;
-
-
-    z-index:100;
-
-
-    animation:giftFloat 3s infinite ease-in-out;
+    animation:
+    floatGift 3s infinite ease-in-out;
 
 }
 
 
 
-.gift{
-
-
-    position:relative;
-
-    width:100%;
-
-    height:100%;
-
-}
-
-
-
-
-
-.gift-body{
-
-
-    position:absolute;
-
-    bottom:0;
-
-    left:30px;
-
-
-    width:200px;
-
-    height:130px;
-
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #142c66,
-        #21498f
-    );
-
-
-    border-radius:0 0 15px 15px;
-
-
-    box-shadow:
-
-    0 0 40px rgba(80,140,255,.8);
-
-}
-
-
-
-
-.gift-top{
-
-
-    position:absolute;
-
-    top:40px;
-
-    left:20px;
-
-
-    width:220px;
-
-    height:40px;
-
-
-    background:#315bb0;
-
-    border-radius:10px;
-
-}
-
-
-
-
-
-.gift-ribbon-v{
-
-
-    position:absolute;
-
-
-    width:35px;
-
-    height:170px;
-
-
-    background:#ffd86b;
-
-
-    left:112px;
-
-    top:40px;
-
-}
-
-
-
-.gift-ribbon-h{
-
-
-    position:absolute;
-
-
-    width:220px;
-
-    height:25px;
-
-
-    background:#ffd86b;
-
-
-    left:20px;
-
-    top:100px;
-
-}
-
-
-
-
-
-.gift-bow{
-
-
-    position:absolute;
-
-
-    width:80px;
-
-    height:50px;
-
-
-    background:#ffd86b;
-
-
-    border-radius:50%;
-
-
-    top:0;
-
-
-}
-
-
-.bow-left{
-
-    left:50px;
-
-    transform:rotate(-25deg);
-
-}
-
-
-.bow-right{
-
-    right:50px;
-
-    transform:rotate(25deg);
-
-}
-
-
-
-
-@keyframes giftFloat{
+@keyframes floatGift{
 
 
     50%{
@@ -738,3 +568,316 @@ body{
 
 }
 
+
+
+
+.gift{
+
+    position:relative;
+
+    width:180px;
+
+    height:150px;
+
+}
+
+
+
+/* thân hộp */
+
+.gift-body{
+
+
+    position:absolute;
+
+    bottom:0;
+
+    left:20px;
+
+
+    width:140px;
+
+    height:100px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #274c9b,
+        #10295c
+    );
+
+
+    border-radius:5px;
+
+
+    box-shadow:
+
+    0 0 30px rgba(100,160,255,.6);
+
+}
+
+
+
+
+/* nắp hộp */
+
+.gift-top{
+
+
+    position:absolute;
+
+
+    top:25px;
+
+    left:10px;
+
+
+    width:160px;
+
+    height:35px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #4169e1,
+        #1b376d
+    );
+
+
+    border-radius:8px;
+
+
+    z-index:3;
+
+
+    transform-origin:left bottom;
+
+
+    transition:1s;
+
+}
+
+
+
+/* dây dọc */
+
+.gift-ribbon-v{
+
+
+    position:absolute;
+
+
+    left:82px;
+
+    bottom:0;
+
+
+    width:18px;
+
+    height:135px;
+
+
+    background:#ffd85c;
+
+
+    z-index:5;
+
+}
+
+
+
+/* dây ngang */
+
+
+.gift-ribbon-h{
+
+
+    position:absolute;
+
+
+    top:65px;
+
+    left:20px;
+
+
+    width:140px;
+
+    height:18px;
+
+
+    background:#ffd85c;
+
+
+    z-index:6;
+
+}
+
+
+
+
+/* nơ */
+
+.gift-bow{
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    width:60px;
+
+    height:35px;
+
+
+    background:#ffd85c;
+
+
+    border-radius:50%;
+
+
+    z-index:8;
+
+
+}
+
+
+
+.bow-left{
+
+
+    left:45px;
+
+    transform:rotate(-35deg);
+
+}
+
+
+
+.bow-right{
+
+
+    right:45px;
+
+    transform:rotate(35deg);
+
+}
+
+
+
+/* ánh sáng khi mở */
+
+
+.gift-container.open::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:250px;
+
+    height:250px;
+
+
+    left:-35px;
+
+    top:-70px;
+
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,240,150,.8),
+        transparent 70%
+    );
+
+
+    animation:
+
+    glow 1s infinite alternate;
+
+}
+
+
+
+@keyframes glow{
+
+
+    from{
+
+        opacity:.5;
+
+        transform:scale(.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/* mở nắp */
+
+
+.gift-container.open .gift-top{
+
+
+    transform:
+
+    rotate(-45deg)
+    translate(-20px,-20px);
+
+}
+
+
+
+/* hộp bay lên */
+
+
+.gift-container.open .gift{
+
+
+    animation:
+
+    openGift 1s forwards;
+
+}
+
+
+
+@keyframes openGift{
+
+
+    50%{
+
+        transform:translateY(-40px)
+        scale(1.1);
+
+    }
+
+
+    100%{
+
+        transform:translateY(-10px)
+        scale(1);
+
+    }
+
+}
