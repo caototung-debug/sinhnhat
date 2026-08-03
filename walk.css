@@ -1,622 +1,307 @@
 /* ================= RESET ================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width:100%;
-    height:100vh;
-    overflow:hidden;
-    font-family:'Poppins',sans-serif;
-    background:#020617;
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #020617;
 }
-
 
 /* ================= BACKGROUND ================= */
-
-.background{
-    position:fixed;
-    inset:0;
-    background:
-    linear-gradient(
+.background {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
         to bottom,
-        #020617,
-        #081b36,
-        #19395c
+        #020b18 0%,
+        #0a192f 50%,
+        #030d1a 100%
     );
-    overflow:hidden;
-    z-index:0;
+    overflow: hidden;
+    z-index: 0;
 }
 
-
-/* ================= MOON ================= */
-
-.moon{
-
-    position:absolute;
-
-    width:140px;
-    height:140px;
-
-    top:60px;
-    right:15%;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        white,
-        #dcecff 45%,
-        transparent 70%
-    );
-
-
-    box-shadow:
-    0 0 40px white,
-    0 0 100px #7fb5ff;
-
+/* ================= MOON (Sửa lỗi viền đen) ================= */
+.moon {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50px;
+    right: 12%;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 
+        0 0 20px #ffffff,
+        0 0 50px rgba(165, 203, 255, 0.8),
+        0 0 100px rgba(90, 145, 255, 0.4);
 }
-
 
 /* ================= STARS ================= */
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 70px 70px;
+    opacity: 0.3;
+}
 
-.stars{
-
-    position:absolute;
-    inset:0;
-
-
-    background-image:
-    radial-gradient(
-        white 1px,
-        transparent 1px
+/* ================= SƯƠNG MÙ (FOG) ================= */
+.fog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 250px;
+    background: linear-gradient(
+        to top, 
+        rgba(15, 28, 54, 0.7) 0%, 
+        rgba(30, 58, 110, 0.3) 50%, 
+        transparent 100%
     );
-
-
-    background-size:80px 80px;
-
-    opacity:.5;
-
+    filter: blur(15px);
+    z-index: 10;
+    animation: fogMove 25s infinite linear;
 }
 
-
-
-/* ================= LIGHT ================= */
-
-
-.light{
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    left:50%;
-    top:60%;
-
-    transform:translate(-50%,-50%);
-
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(130,190,255,.35),
-        transparent 70%
-    );
-
+@keyframes fogMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(0); }
 }
 
-
-
-/* ==========================================
-        HOA CẨM TÚ CẦU
-========================================== */
-
-.flowers{
-    position:absolute;
-    bottom:20px;
-    width:400px;
-    height:300px;
-    z-index:15;
-}
-
-
-/* bên trái */
-
-.left-flowers{
-    left:20px;
-}
-
-
-/* bên phải */
-
-.right-flowers{
-    right:20px;
-    transform:scaleX(-1);
-}
-
-
-/* từng cụm hoa */
-
-.flowers::before,
-.flowers::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
-
-
-    background:
-    radial-gradient(circle at 30% 30%,
-    #ffffff,
-    #9cc7ff 20%,
-    #557cff 45%,
-    #243b9f 70%,
-    transparent 72%);
-
-
-    box-shadow:
-
-    0 0 30px #6ea8ff;
-
-
-    animation:
-    flowerFloat 4s infinite ease-in-out;
-
-}
-
-
-
-.flowers::before{
-
-    left:20px;
-    bottom:0;
-
-}
-
-
-
-.flowers::after{
-
-    right:20px;
-    bottom:70px;
-
-}
-
-
-
-@keyframes flowerFloat{
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
-
-}
-
-/* ================= ROAD ================= */
-
-
-.road{
-
-    position:absolute;
-
-    bottom:-150px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-
-    width:450px;
-    height:650px;
-
-
-    background:
-
-    linear-gradient(
+/* ================= LỐI ĐI HUYỀN ẢO ================= */
+.road {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 400px;
+    background: linear-gradient(
         to top,
-        rgba(120,130,150,.35),
-        transparent
+        rgba(41, 72, 125, 0.4) 0%,
+        rgba(20, 40, 80, 0.15) 70%,
+        transparent 100%
     );
-
-
-    clip-path:
-    polygon(
-        40% 0,
-        60% 0,
-        100% 100%,
-        0 100%
-    );
-
+    clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+    filter: blur(2px);
+    z-index: 5;
 }
 
-
-
-/* ================= TEXT ================= */
-
-
-.content{
-
-    position:absolute;
-
-    top:35%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:90%;
-
-    text-align:center;
-
-    z-index:30;
-
+/* ================= HOA CẨM TÚ CẦU NAVY ================= */
+.hydrangea-field {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 15;
 }
 
-
-
-.content h1{
-
-
-    font-family:
-    'Cormorant Garamond',
-    serif;
-
-
-    font-size:65px;
-
-    letter-spacing:5px;
-
-
-    color:white;
-
-
-    text-shadow:
-
-    0 0 20px #8ec5ff,
-    0 0 50px #508cff;
-
-
+.flower-cluster {
+    position: relative;
+    width: 350px;
+    height: 100%;
 }
 
-
-
-.content p{
-
-    margin-top:25px;
-
-    color:#d5e6ff;
-
-    font-size:20px;
-
+/* Cụm hoa tạo hình bằng nhiều lớp Radial Gradients */
+.flower-cluster::before,
+.flower-cluster::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 12px rgba(13, 37, 86, 0.9));
 }
 
+/* Bụi hoa bên trái */
+.left-field::before {
+    width: 260px;
+    height: 200px;
+    bottom: 10px;
+    left: -40px;
+    background: 
+        radial-gradient(circle at 30% 30%, #2b4c7e 10%, transparent 40%),
+        radial-gradient(circle at 70% 40%, #162a52 10%, transparent 40%),
+        radial-gradient(circle at 40% 70%, #0d1b3a 15%, transparent 50%),
+        #122244;
+    border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+}
 
+.left-field::after {
+    width: 200px;
+    height: 160px;
+    bottom: 60px;
+    left: 100px;
+    background: 
+        radial-gradient(circle at 40% 30%, #3a629b 10%, transparent 40%),
+        radial-gradient(circle at 60% 60%, #1c335e 10%, transparent 40%),
+        #0a152e;
+    border-radius: 50%;
+}
+
+/* Bụi hoa bên phải */
+.right-field::before {
+    width: 280px;
+    height: 220px;
+    bottom: 0;
+    right: -30px;
+    background: 
+        radial-gradient(circle at 40% 30%, #2b4c7e 10%, transparent 40%),
+        radial-gradient(circle at 60% 60%, #112144 10%, transparent 40%),
+        #0e1a38;
+    border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
+}
+
+.right-field::after {
+    width: 210px;
+    height: 170px;
+    bottom: 70px;
+    right: 120px;
+    background: 
+        radial-gradient(circle at 30% 40%, #3a629b 10%, transparent 40%),
+        radial-gradient(circle at 70% 30%, #182d53 10%, transparent 40%),
+        #0a1329;
+    border-radius: 50%;
+}
+
+/* ================= NỘI DUNG / TEXT ================= */
+.content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    z-index: 30;
+}
+
+.content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    letter-spacing: 3px;
+    color: #f0f6ff;
+    text-shadow: 
+        0 0 15px rgba(142, 197, 255, 0.6),
+        0 0 35px rgba(80, 140, 255, 0.4);
+}
+
+.content p {
+    margin-top: 12px;
+    color: #b0d0ff;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
 
 /* ================= LOADING ================= */
-
-
-.progress{
-
-    width:400px;
-
-    height:5px;
-
-    margin:40px auto;
-
-    background:#ffffff40;
-
+.progress {
+    width: 260px;
+    height: 3px;
+    margin: 25px auto 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-
-
-.progress-bar{
-
-    height:100%;
-
-    width:100%;
-
-    background:white;
-
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #508cff, #ffffff);
+    border-radius: 10px;
 }
 
-
-
-/* ==========================================
-        HỘP QUÀ
-========================================== */
-
-
-.gift-container{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:100px;
-
-    transform:translateX(-50%) scale(0);
-
-    z-index:50;
-
-
-    transition:1s;
-
-
+/* ================= HỘP QUÀ ================= */
+.gift-container {
+    position: absolute;
+    left: 50%;
+    bottom: 110px;
+    transform: translateX(-50%);
+    z-index: 25;
 }
 
-
-/* hiện ra sau loading */
-
-.gift-container.show{
-
-    transform:
-    translateX(-50%)
-    scale(1);
-
-
+.gift {
+    width: 120px;
+    height: 110px;
+    position: relative;
+    cursor: pointer;
+    animation: giftFloat 3.5s infinite ease-in-out;
 }
 
-
-
-
-.gift{
-
-    width:180px;
-
-    height:160px;
-
-    position:relative;
-
-    cursor:pointer;
-
-
-    animation:
-
-    giftFloat 3s infinite ease-in-out;
-
-
+@keyframes giftFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-
-
-@keyframes giftFloat{
-
-
-    50%{
-
-        transform:translateY(-20px);
-
-    }
-
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 75px;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
 }
 
-
-
-
-/* thân hộp */
-
-.gift-body{
-
-
-    position:absolute;
-
-    bottom:0;
-
-    width:180px;
-
-    height:110px;
-
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #284b9b,
-    #071b55
-    );
-
-
-    border-radius:0 0 15px 15px;
-
-
-    box-shadow:
-
-    0 0 40px rgba(100,160,255,.8);
-
+.gift-top {
+    position: absolute;
+    top: 20px;
+    width: 128px;
+    left: -4px;
+    height: 22px;
+    background: #2563eb;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-
-
-
-/* nắp hộp */
-
-.gift-top{
-
-
-    position:absolute;
-
-
-    top:25px;
-
-
-    width:180px;
-
-    height:35px;
-
-
-    background:#4169e1;
-
-
-    border-radius:10px;
-
-
+.gift-ribbon-v {
+    position: absolute;
+    left: 52px;
+    width: 16px;
+    height: 95px;
+    background: #fbbf24;
 }
 
-
-
-
-/* dây dọc */
-
-.gift-ribbon-v{
-
-
-    position:absolute;
-
-
-    left:80px;
-
-    width:20px;
-
-    height:135px;
-
-
-    background:#ffd85c;
-
-
+.gift-ribbon-h {
+    position: absolute;
+    top: 45px;
+    width: 120px;
+    height: 14px;
+    background: #fbbf24;
 }
 
-
-
-
-/* dây ngang */
-
-.gift-ribbon-h{
-
-
-    position:absolute;
-
-
-    top:60px;
-
-
-    width:180px;
-
-    height:20px;
-
-
-    background:#ffd85c;
-
-
+.gift-bow {
+    position: absolute;
+    top: -12px;
+    width: 40px;
+    height: 30px;
+    background: #fbbf24;
+    border-radius: 50%;
 }
 
+.bow-left { left: 22px; transform: rotate(-25deg); }
+.bow-right { right: 22px; transform: rotate(25deg); }
 
-
-/* nơ */
-
-
-.gift-bow{
-
-
-    position:absolute;
-
-
-    top:-20px;
-
-
-    width:60px;
-
-    height:45px;
-
-
-    background:#ffd85c;
-
-
-    border-radius:50%;
-
-
+/* ================= ĐOM ĐÓM (FIREFLIES) ================= */
+.firefly {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fef08a;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #fef08a, 0 0 20px #fde047;
+    animation: flyGlow 4s infinite ease-in-out alternate;
+    z-index: 20;
 }
 
-
-
-.bow-left{
-
-    left:35px;
-
-    transform:rotate(-30deg);
-
-}
-
-
-
-.bow-right{
-
-    right:35px;
-
-    transform:rotate(30deg);
-
-}
-
-
-
-
-/* mở hộp */
-
-.gift.open .gift-top{
-
-
-    transform:
-
-    translateY(-60px)
-    rotateX(40deg);
-
-
-    transition:1s;
-
-}
-
-
-
-.gift.open{
-
-
-    animation:none;
-
-}
-
-
-
-/* ================= FIREFLY ================= */
-
-
-#fireflies{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:20;
-
-}
-
-
-.fly{
-
-    width:6px;
-
-    height:6px;
-
-    background:#fff7a8;
-
-    border-radius:50%;
-
-    position:absolute;
-
-
-    box-shadow:
-
-    0 0 15px #fff7a8;
-
+@keyframes flyGlow {
+    0% { opacity: 0.2; transform: scale(0.8) translateY(0); }
+    100% { opacity: 1; transform: scale(1.4) translateY(-15px); }
 }
