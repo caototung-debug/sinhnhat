@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     /* ==========================================
-        1. HIỆU ỨNG GÕ CHỮ (TYPING EFFECT)
-    ========================================== */
-    const text = "Đang bước vào khu rừng...";
-    const typing = document.getElementById("typing");
+    1. HIỆU ỨNG GÕ CHỮ (ĐÃ FIX DÍNH CHỮ)
+========================================== */
+const text = "Đang bước vào khu rừng...";
+const typing = document.getElementById("typing");
 
-    if (typing) {
-        typing.innerText = ""; // Xóa chữ cũ
-        let index = 0;
+if (typing) {
+    typing.textContent = ""; // Dùng textContent thay vì innerText để giữ nguyên khoảng trắng
+    let index = 0;
 
-        function typeEffect() {
-            if (index < text.length) {
-                typing.innerText += text.charAt(index);
-                index++;
-                setTimeout(typeEffect, 100);
-            }
+    function typeEffect() {
+        if (index < text.length) {
+            typing.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100);
         }
-        typeEffect();
     }
+    typeEffect();
+}
 
 
     /* ==========================================
