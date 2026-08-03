@@ -1,51 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     /* ==========================================
-    1. HIỆU ỨNG GÕ CHỮ (ĐÃ FIX DÍNH CHỮ)
-========================================== */
-const text = "Đang bước vào khu rừng...";
-const typing = document.getElementById("typing");
+        1. HIỆU ỨNG GÕ CHỮ (SỬA LỖI CHUẨN CÁCH KÝ TỰ)
+    ========================================== */
+    const text = "Đang bước vào khu rừng...";
+    const typing = document.getElementById("typing");
 
-if (typing) {
-    typing.textContent = ""; // Dùng textContent thay vì innerText để giữ nguyên khoảng trắng
-    let index = 0;
+    if (typing) {
+        typing.innerHTML = "";
+        let index = 1;
 
-    function typeEffect() {
-        if (index < text.length) {
-            typing.innerHTML = text.slice(0, index);
-            index++;
-            setTimeout(typeEffect, 100);
+        function typeEffect() {
+            if (index <= text.length) {
+                typing.innerHTML = text.slice(0, index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
         }
+        typeEffect();
     }
-    typeEffect();
-}
 
 
-   /* ==========================================
-        CLICK HỘP QUÀ: RÚT DÂY ➔ SÁNG NHÈ NHẸ ➔ CHUYỂN TRANG
+    /* ==========================================
+        2. CLICK HỘP QUÀ: RÚT DÂY ➔ NẮP BÂT ➔ ÁNH SÁNG TỎA ➔ CHUYỂN TRANG
     ========================================== */
     const giftContainer = document.getElementById("gift");
     const flashScreen = document.querySelector(".flash-screen");
 
     if (giftContainer) {
         giftContainer.addEventListener("click", () => {
-            // Tránh click nhiều lần
             if (giftContainer.classList.contains("open")) return;
 
-            // BƯỚC 1: Kích hoạt hiệu ứng rút dây + bật nắp hộp quà ngay lập tức
+            // BƯỚC 1: Kích hoạt hiệu ứng rút dây + nắp hộp bật mở ngay lập tức
             giftContainer.classList.add("open");
 
-            // BƯỚC 2: Đợi 0.6s cho dây rút và nắp mở xong, bắt đầu tỏa ánh sáng nhè nhẹ
+            // BƯỚC 2: Sau 0.4s (nắp vừa nảy lên), luồng ánh sáng từ lòng hộp bung nở từ từ
             setTimeout(() => {
                 if (flashScreen) {
                     flashScreen.classList.add("active");
                 }
-            }, 600);
+            }, 400);
 
-            // BƯỚC 3: Đợi ánh sáng lan tỏa nhẹ nhàng phủ kín màn hình (sau 1.8s) mới chuyển trang
+            // BƯỚC 3: Màn hình bừng sáng phủ kín mềm mại (sau 1.6s) -> Tiến hành chuyển trang
             setTimeout(() => {
                 window.location.href = "nhungloidan.html";
-            }, 1800);
+            }, 1600);
         });
     }
 
