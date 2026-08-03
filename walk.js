@@ -72,27 +72,19 @@ setTimeout(()=>{
 ========================================== */
 
 
-const gift = document.querySelector(".gift");
+const gift = document.getElementById("gift");
 
 
-
-giftContainer.addEventListener("click",()=>{
-
+gift.addEventListener("click",()=>{
 
     gift.classList.add("open");
 
 
-
-    // chờ hiệu ứng mở quà
-
     setTimeout(()=>{
-
 
         window.location.href="nhungloidan.html";
 
-
-    },2500);
-
+    },3000);
 
 
 });
