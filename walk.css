@@ -97,80 +97,79 @@ body {
 /* ================= HOA CẨM TÚ CẦU NAVY PHÁT SÁNG ================= */
 .hydrangea-field {
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 320px;
+    height: 380px; /* Tăng chiều cao để hoa vươn cao hơn */
     display: flex;
     justify-content: space-between;
     pointer-events: none;
-    z-index: 25; /* Đẩy z-index lên trên con đường và background */
+    z-index: 25;
 }
 
 .flower-cluster {
     position: relative;
-    width: 380px;
+    width: 420px; /* Mở rộng chiều rộng cụm hoa */
     height: 100%;
 }
 
-/* Tạo lớp các đốm hoa cẩm tú cầu bằng Radial Gradient tô sáng */
 .flower-cluster::before,
 .flower-cluster::after {
     content: "";
     position: absolute;
     border-radius: 50%;
-    /* Thêm hiệu ứng dạ quang tỏa sáng cho bụi hoa */
-    filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.7));
+    filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.8));
 }
 
-/* Bụi hoa bên trái */
+/* Bụi hoa bên trái - Kéo cao lên trên và to ra */
 .left-field::before {
-    width: 280px;
-    height: 220px;
-    bottom: 0px;
-    left: -30px;
+    width: 320px;
+    height: 260px;
+    bottom: 20px; /* Đẩy vươn lên trên */
+    left: -20px;
     background: 
-        radial-gradient(circle at 30% 30%, #93c5fd 0%, #3b82f6 12%, transparent 30%),
-        radial-gradient(circle at 65% 35%, #bfdbfe 0%, #2563eb 15%, transparent 35%),
-        radial-gradient(circle at 45% 65%, #60a5fa 0%, #1d4ed8 18%, transparent 40%),
-        radial-gradient(circle at 80% 70%, #93c5fd 0%, #1e40af 15%, transparent 35%),
+        radial-gradient(circle at 30% 30%, #bfdbfe 0%, #3b82f6 15%, transparent 35%),
+        radial-gradient(circle at 65% 35%, #e0f2fe 0%, #2563eb 18%, transparent 40%),
+        radial-gradient(circle at 45% 65%, #60a5fa 0%, #1d4ed8 20%, transparent 45%),
+        radial-gradient(circle at 80% 70%, #93c5fd 0%, #1e40af 18%, transparent 40%),
         #1e3a8a;
     border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
 }
 
 .left-field::after {
-    width: 220px;
-    height: 180px;
-    bottom: 50px;
-    left: 120px;
+    width: 250px;
+    height: 200px;
+    bottom: 100px; /* Đẩy cụm hoa phụ lên cao hơn */
+    left: 140px;
     background: 
-        radial-gradient(circle at 35% 35%, #e0f2fe 0%, #38bdf8 15%, transparent 35%),
-        radial-gradient(circle at 65% 60%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 18%, transparent 40%),
+        radial-gradient(circle at 65% 60%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
         #172554;
     border-radius: 50%;
 }
 
-/* Bụi hoa bên phải */
+/* Bụi hoa bên phải - Kéo cao lên trên và to ra */
 .right-field::before {
-    width: 300px;
-    height: 240px;
-    bottom: 0px;
-    right: -20px;
+    width: 340px;
+    height: 280px;
+    bottom: 10px;
+    right: -10px;
     background: 
-        radial-gradient(circle at 40% 30%, #bfdbfe 0%, #2563eb 15%, transparent 35%),
-        radial-gradient(circle at 70% 40%, #93c5fd 0%, #1d4ed8 15%, transparent 35%),
-        radial-gradient(circle at 30% 70%, #60a5fa 0%, #1e40af 18%, transparent 40%),
+        radial-gradient(circle at 40% 30%, #e0f2fe 0%, #2563eb 18%, transparent 40%),
+        radial-gradient(circle at 70% 40%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        radial-gradient(circle at 30% 70%, #60a5fa 0%, #1e40af 22%, transparent 45%),
         #1e3a8a;
     border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
 }
 
 .right-field::after {
-    width: 230px;
-    height: 190px;
-    bottom: 60px;
-    right: 130px;
+    width: 260px;
+    height: 210px;
+    bottom: 110px;
+    right: 150px;
     background: 
-        radial-gradient(circle at 30% 40%, #e0f2fe 0%, #38bdf8 15%, transparent 35%),
-        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1d4ed8 18%, transparent 40%),
+        radial-gradient(circle at 30% 40%, #ffffff 0%, #38bdf8 18%, transparent 40%),
+        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
         #172554;
     border-radius: 50%;
 }
