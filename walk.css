@@ -470,7 +470,107 @@ body{
 
 
 
-/* ================= QUÀ ================= */
+/* ======================================
+        HOA CẨM TÚ CẦU
+====================================== */
+
+.flowers{
+
+    position:absolute;
+
+    bottom:20px;
+
+    width:500px;
+
+    height:300px;
+
+    z-index:20;
+
+}
+
+
+.left-flowers{
+
+    left:0;
+
+}
+
+
+.right-flowers{
+
+    right:0;
+
+    transform:scaleX(-1);
+
+}
+
+
+/* từng cụm hoa */
+
+.flowers::before,
+.flowers::after{
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+
+    background:
+    radial-gradient(
+        circle,
+        #ffffff,
+        #b7d5ff 15%,
+        #6d8cff 35%,
+        #4055c7 60%,
+        transparent 70%
+    );
+
+
+    box-shadow:
+
+    0 0 40px rgba(120,160,255,.9);
+
+
+}
+
+
+/* hoa lớn */
+
+.flowers::before{
+
+    width:260px;
+    height:260px;
+
+    bottom:0;
+
+    left:30px;
+
+}
+
+
+/* hoa nhỏ phía sau */
+
+.flowers::after{
+
+    width:200px;
+    height:200px;
+
+    bottom:80px;
+
+    left:200px;
+
+}
+
+
+
+
+
+
+/* ======================================
+        HỘP QUÀ
+====================================== */
 
 
 .gift-container{
@@ -479,30 +579,201 @@ body{
 
     left:50%;
 
-    bottom:100px;
+    bottom:120px;
+
 
     transform:translateX(-50%);
 
 
-    z-index:30;
+    width:260px;
+
+    height:220px;
 
 
-    animation:
-    float 3s infinite;
+    z-index:100;
+
+
+    animation:giftFloat 3s infinite ease-in-out;
 
 }
 
 
 
-@keyframes float{
+.gift{
+
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+
+
+
+.gift-body{
+
+
+    position:absolute;
+
+    bottom:0;
+
+    left:30px;
+
+
+    width:200px;
+
+    height:130px;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #142c66,
+        #21498f
+    );
+
+
+    border-radius:0 0 15px 15px;
+
+
+    box-shadow:
+
+    0 0 40px rgba(80,140,255,.8);
+
+}
+
+
+
+
+.gift-top{
+
+
+    position:absolute;
+
+    top:40px;
+
+    left:20px;
+
+
+    width:220px;
+
+    height:40px;
+
+
+    background:#315bb0;
+
+    border-radius:10px;
+
+}
+
+
+
+
+
+.gift-ribbon-v{
+
+
+    position:absolute;
+
+
+    width:35px;
+
+    height:170px;
+
+
+    background:#ffd86b;
+
+
+    left:112px;
+
+    top:40px;
+
+}
+
+
+
+.gift-ribbon-h{
+
+
+    position:absolute;
+
+
+    width:220px;
+
+    height:25px;
+
+
+    background:#ffd86b;
+
+
+    left:20px;
+
+    top:100px;
+
+}
+
+
+
+
+
+.gift-bow{
+
+
+    position:absolute;
+
+
+    width:80px;
+
+    height:50px;
+
+
+    background:#ffd86b;
+
+
+    border-radius:50%;
+
+
+    top:0;
+
+
+}
+
+
+.bow-left{
+
+    left:50px;
+
+    transform:rotate(-25deg);
+
+}
+
+
+.bow-right{
+
+    right:50px;
+
+    transform:rotate(25deg);
+
+}
+
+
+
+
+@keyframes giftFloat{
 
 
     50%{
 
         transform:
         translateX(-50%)
-        translateY(-15px);
+        translateY(-20px);
 
     }
 
 }
+
