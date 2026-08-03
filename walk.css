@@ -1,3 +1,7 @@
+/* =====================================
+        RESET
+===================================== */
+
 *{
     margin:0;
     padding:0;
@@ -6,29 +10,41 @@
 
 
 body{
+
     width:100%;
     height:100vh;
+
     overflow:hidden;
+
     font-family:'Poppins',sans-serif;
+
     background:#020617;
+
 }
 
 
-/* ================= BACKGROUND ================= */
+
+/* =====================================
+        BẦU TRỜI
+===================================== */
 
 
 .background{
 
     position:fixed;
+
     inset:0;
 
     background:
+
     linear-gradient(
         to bottom,
         #020617,
-        #071b36 50%,
-        #142f52
+        #071b36,
+        #12345a
     );
+
+    overflow:hidden;
 
     z-index:0;
 
@@ -36,184 +52,261 @@ body{
 
 
 
-/* ================= SAO ================= */
-
-
-.stars{
-
-    position:absolute;
-    inset:0;
-
-    background-image:
-    radial-gradient(
-        white 1px,
-        transparent 1px
-    );
-
-    background-size:80px 80px;
-
-    opacity:.6;
-
-    animation:stars 30s linear infinite;
-
-}
-
-
-@keyframes stars{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-100px);
-    }
-
-}
-
-
-
-/* ================= TRĂNG ================= */
+/* =====================================
+        MẶT TRĂNG
+===================================== */
 
 
 .moon{
 
     position:absolute;
 
-    top:60px;
+    top:70px;
+
     right:15%;
 
     width:140px;
+
     height:140px;
+
 
     border-radius:50%;
 
 
     background:
+
     radial-gradient(
         circle,
         white,
-        #d8ebff 50%,
+        #d9ecff 45%,
         transparent 75%
     );
 
 
     box-shadow:
-    0 0 50px #9ed0ff,
-    0 0 120px #6ca6ff;
+
+    0 0 40px white,
+
+    0 0 100px #8ec5ff;
+
+
+    animation:
+
+    moonFloat 8s infinite ease-in-out;
+
+}
+
+
+
+@keyframes moonFloat{
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
 
 }
 
 
 
 
-/* ================= SƯƠNG ================= */
+/* =====================================
+        SAO
+===================================== */
+
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+
+    background-image:
+
+    radial-gradient(
+        white 1px,
+        transparent 1px
+    );
+
+
+    background-size:
+
+    70px 70px;
+
+
+    opacity:.5;
+
+
+    animation:
+
+    starsMove 30s linear infinite;
+
+}
+
+
+
+@keyframes starsMove{
+
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+
+
+
+
+/* =====================================
+        SƯƠNG
+===================================== */
 
 
 .fog{
 
     position:absolute;
 
-    bottom:0;
+
+    bottom:-50px;
+
     left:-20%;
 
+
     width:140%;
-    height:250px;
+
+    height:300px;
 
 
     background:
+
     radial-gradient(
         ellipse,
-        rgba(200,230,255,.3),
+        rgba(180,220,255,.3),
         transparent 70%
     );
 
 
-    filter:blur(35px);
+    filter:blur(40px);
 
-    animation:fog 12s infinite alternate;
+
+    animation:
+
+    fogMove 12s infinite alternate;
 
 }
 
 
-@keyframes fog{
+
+@keyframes fogMove{
+
 
     from{
-        transform:translateX(-80px);
+
+        transform:translateX(-100px);
+
     }
 
+
     to{
-        transform:translateX(80px);
+
+        transform:translateX(100px);
+
     }
 
 }
 
 
 
-
-/* ================= ÁNH SÁNG ================= */
+/* =====================================
+        ÁNH SÁNG GIỮA ĐƯỜNG
+===================================== */
 
 
 .light{
 
+
     position:absolute;
 
-    width:700px;
-    height:700px;
 
     left:50%;
+
     top:60%;
+
+
+    width:600px;
+
+    height:600px;
+
 
     transform:translate(-50%,-50%);
 
 
     background:
+
     radial-gradient(
         circle,
-        rgba(120,180,255,.25),
+        rgba(130,190,255,.35),
         transparent 70%
     );
+
+
+    filter:blur(30px);
 
 }
 
 
 
 
-/* ======================================
-        HOA CẨM TÚ CẦU THẬT HƠN
-====================================== */
+/* =====================================
+        HOA CẨM TÚ CẦU
+===================================== */
 
 
 .flowers{
 
+
     position:absolute;
 
-    bottom:-20px;
 
-    width:500px;
+    bottom:0;
 
-    height:300px;
 
-    z-index:10;
+    width:450px;
+
+    height:350px;
+
+
+    z-index:15;
+
 
 }
 
 
-/* bên trái */
+
 
 .left-flowers{
 
-    left:-50px;
+    left:-40px;
 
 }
 
 
 
-/* bên phải */
-
 .right-flowers{
 
-    right:-50px;
+    right:-40px;
 
     transform:scaleX(-1);
 
@@ -221,7 +314,8 @@ body{
 
 
 
-/* tạo cụm hoa */
+
+/* cụm hoa */
 
 .flowers::before{
 
@@ -232,65 +326,61 @@ body{
     position:absolute;
 
 
-    width:260px;
+    left:40px;
 
-    height:260px;
+    bottom:30px;
+
+
+    width:250px;
+
+    height:250px;
 
 
     border-radius:50%;
 
 
-
     background:
 
-    radial-gradient(
-        circle at 20% 20%,
-        #ffffff 0 8%,
-        transparent 10%
-    ),
 
-    radial-gradient(
-        circle at 40% 30%,
-        #bcd7ff 0 10%,
-        transparent 12%
-    ),
+    radial-gradient(circle at 20% 30%,
+    #dbeafe 0 8%,
+    transparent 10%),
 
-    radial-gradient(
-        circle at 60% 25%,
-        #8bb8ff 0 10%,
-        transparent 12%
-    ),
 
-    radial-gradient(
-        circle at 70% 50%,
-        #6f8cff 0 12%,
-        transparent 14%
-    ),
+    radial-gradient(circle at 50% 20%,
+    #93c5fd 0 10%,
+    transparent 12%),
 
-    radial-gradient(
-        circle at 35% 65%,
-        #9fc5ff 0 12%,
-        transparent 14%
-    ),
 
-    radial-gradient(
-        circle at 55% 75%,
-        #4169e1 0 15%,
-        transparent 17%
+    radial-gradient(circle at 75% 35%,
+    #60a5fa 0 12%,
+    transparent 14%),
+
+
+    radial-gradient(circle at 35% 60%,
+    #7dd3fc 0 12%,
+    transparent 14%),
+
+
+    radial-gradient(circle at 65% 70%,
+    #4169e1 0 15%,
+    transparent 17%),
+
+
+    radial-gradient(circle at 50% 90%,
+    #312e81 0 14%,
+    transparent 16%);
+
+
+
+    filter:drop-shadow(
+    0 0 30px #60a5fa
     );
-
-
-    filter:
-    drop-shadow(
-        0 0 25px rgba(100,150,255,.8)
-    );
-
 
 }
 
 
 
-/* hoa trái */
 
 .flowers::after{
 
@@ -301,36 +391,29 @@ body{
     position:absolute;
 
 
-    width:180px;
+    width:170px;
 
-    height:180px;
+    height:170px;
 
 
-    left:160px;
+    left:220px;
 
-    bottom:80px;
-
+    bottom:120px;
 
 
     border-radius:50%;
-
 
 
     background:
 
     radial-gradient(
         circle,
-        #d9eaff,
-        #7aa7ff 40%,
-        #3548b8 70%,
+        #dbeafe,
+        #60a5fa 45%,
+        #1e3a8a 70%,
         transparent 72%
     );
 
-
-    filter:
-    drop-shadow(
-        0 0 20px rgba(120,160,255,.8)
-    );
 
 }
 
@@ -338,44 +421,54 @@ body{
 
 
 
-/* ================= ĐƯỜNG ĐI ================= */
+/* =====================================
+        CON ĐƯỜNG
+===================================== */
 
 
 .road{
 
+
     position:absolute;
 
-    bottom:-100px;
+
+    bottom:-200px;
+
 
     left:50%;
+
 
     transform:translateX(-50%);
 
 
-    width:420px;
+    width:500px;
 
-    height:600px;
+
+    height:700px;
 
 
     background:
 
+
     linear-gradient(
         to top,
-        rgba(90,90,90,.5),
+        rgba(150,160,180,.45),
         transparent
     );
 
 
+
     clip-path:
+
     polygon(
-        40% 0,
-        60% 0,
+        35% 0,
+        65% 0,
         100% 100%,
         0 100%
     );
 
 
-    z-index:3;
+    z-index:5;
 
 }
 
@@ -383,26 +476,39 @@ body{
 
 
 
-/* ================= TEXT ================= */
+/* =====================================
+        TEXT
+===================================== */
 
 
 .content{
 
+
     position:absolute;
 
-    top:35%;
+
+    top:30%;
+
 
     left:50%;
 
-    transform:translate(-50%,-50%);
+
+    transform:
+
+    translateX(-50%);
+
 
     width:100%;
 
+
     text-align:center;
+
 
     color:white;
 
-    z-index:20;
+
+    z-index:30;
+
 
 }
 
@@ -417,7 +523,8 @@ body{
     serif;
 
 
-    font-size:70px;
+    font-size:58px;
+
 
     letter-spacing:5px;
 
@@ -427,59 +534,77 @@ body{
 
     text-shadow:
 
-    0 0 20px #8ec5ff,
-    0 0 50px #4b8cff;
 
+    0 0 20px #8ec5ff,
+
+    0 0 50px #4d8cff;
 
 }
+
 
 
 
 .content p{
 
 
-    margin-top:25px;
+    margin-top:20px;
+
 
     font-size:20px;
 
-    color:#d7e8ff;
+
+    letter-spacing:3px;
+
+
+    color:#dbeafe;
 
 }
 
 
 
 
-/* ================= PROGRESS ================= */
+/* =====================================
+        LOADING
+===================================== */
 
 
 .progress{
 
+
     width:350px;
+
 
     height:5px;
 
-    margin:40px auto;
+
+    margin:35px auto;
 
 
     background:
-    rgba(255,255,255,.2);
+
+    rgba(255,255,255,.25);
+
 
 }
 
 
+
 .progress-bar{
+
 
     height:100%;
 
-    background:
-    linear-gradient(
-        90deg,
-        #8ec5ff,
-        white
-    );
+
+    width:0;
+
+
+    background:white;
+
 
     animation:
-    loading 5s linear;
+
+    loading 5s linear forwards;
+
 
 }
 
@@ -487,12 +612,11 @@ body{
 
 @keyframes loading{
 
-    from{
-        width:0;
-    }
 
     to{
+
         width:100%;
+
     }
 
 }
@@ -501,14 +625,19 @@ body{
 
 
 
-/* ================= ĐOM ĐÓM ================= */
+/* =====================================
+        ĐOM ĐÓM
+===================================== */
 
 
 #fireflies{
 
+
     position:absolute;
 
     inset:0;
+
+    z-index:20;
 
 }
 
@@ -516,46 +645,85 @@ body{
 
 .fly{
 
+
+    position:absolute;
+
+
     width:6px;
+
     height:6px;
 
-    background:#fff4a8;
 
     border-radius:50%;
 
 
+    background:#fff7a8;
+
+
     box-shadow:
-    0 0 20px #fff4a8;
+
+    0 0 15px #fff7a8;
+
+
+    animation:
+
+    fly 5s infinite;
 
 }
 
-/* ======================================
+
+
+@keyframes fly{
+
+
+    50%{
+
+        transform:translateY(-40px);
+
+    }
+
+}
+
+
+
+
+
+/* =====================================
         HỘP QUÀ
-====================================== */
+===================================== */
 
 
 .gift-container{
 
+
     position:absolute;
+
 
     left:50%;
 
+
     bottom:120px;
 
-    transform:translateX(-50%);
+
+    transform:
+
+    translateX(-50%);
+
 
     z-index:50;
 
-    cursor:pointer;
 
     animation:
-    floatGift 3s infinite ease-in-out;
+
+    giftFloat 3s infinite ease-in-out;
+
 
 }
 
 
 
-@keyframes floatGift{
+
+@keyframes giftFloat{
 
 
     50%{
@@ -571,209 +739,7 @@ body{
 
 
 
-.gift{
-
-    position:relative;
-
-    width:180px;
-
-    height:150px;
-
-}
-
-
-
-/* thân hộp */
-
-.gift-body{
-
-
-    position:absolute;
-
-    bottom:0;
-
-    left:20px;
-
-
-    width:140px;
-
-    height:100px;
-
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #274c9b,
-        #10295c
-    );
-
-
-    border-radius:5px;
-
-
-    box-shadow:
-
-    0 0 30px rgba(100,160,255,.6);
-
-}
-
-
-
-
-/* nắp hộp */
-
-.gift-top{
-
-
-    position:absolute;
-
-
-    top:25px;
-
-    left:10px;
-
-
-    width:160px;
-
-    height:35px;
-
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #4169e1,
-        #1b376d
-    );
-
-
-    border-radius:8px;
-
-
-    z-index:3;
-
-
-    transform-origin:left bottom;
-
-
-    transition:1s;
-
-}
-
-
-
-/* dây dọc */
-
-.gift-ribbon-v{
-
-
-    position:absolute;
-
-
-    left:82px;
-
-    bottom:0;
-
-
-    width:18px;
-
-    height:135px;
-
-
-    background:#ffd85c;
-
-
-    z-index:5;
-
-}
-
-
-
-/* dây ngang */
-
-
-.gift-ribbon-h{
-
-
-    position:absolute;
-
-
-    top:65px;
-
-    left:20px;
-
-
-    width:140px;
-
-    height:18px;
-
-
-    background:#ffd85c;
-
-
-    z-index:6;
-
-}
-
-
-
-
-/* nơ */
-
-.gift-bow{
-
-
-    position:absolute;
-
-
-    top:0;
-
-
-    width:60px;
-
-    height:35px;
-
-
-    background:#ffd85c;
-
-
-    border-radius:50%;
-
-
-    z-index:8;
-
-
-}
-
-
-
-.bow-left{
-
-
-    left:45px;
-
-    transform:rotate(-35deg);
-
-}
-
-
-
-.bow-right{
-
-
-    right:45px;
-
-    transform:rotate(35deg);
-
-}
-
-
-
-/* ánh sáng khi mở */
-
-
-.gift-container.open::before{
+.gift-container::before{
 
 
     content:"";
@@ -782,41 +748,39 @@ body{
     position:absolute;
 
 
-    width:250px;
+    width:280px;
 
-    height:250px;
+    height:280px;
 
 
-    left:-35px;
+    left:-50px;
 
-    top:-70px;
+    top:-80px;
 
 
     background:
 
     radial-gradient(
         circle,
-        rgba(255,240,150,.8),
+        rgba(255,230,120,.5),
         transparent 70%
     );
 
 
     animation:
 
-    glow 1s infinite alternate;
+    giftGlow 2s infinite alternate;
 
 }
 
 
 
-@keyframes glow{
+@keyframes giftGlow{
 
 
     from{
 
-        opacity:.5;
-
-        transform:scale(.8);
+        opacity:.3;
 
     }
 
@@ -824,59 +788,6 @@ body{
     to{
 
         opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-/* mở nắp */
-
-
-.gift-container.open .gift-top{
-
-
-    transform:
-
-    rotate(-45deg)
-    translate(-20px,-20px);
-
-}
-
-
-
-/* hộp bay lên */
-
-
-.gift-container.open .gift{
-
-
-    animation:
-
-    openGift 1s forwards;
-
-}
-
-
-
-@keyframes openGift{
-
-
-    50%{
-
-        transform:translateY(-40px)
-        scale(1.1);
-
-    }
-
-
-    100%{
-
-        transform:translateY(-10px)
-        scale(1);
 
     }
 
