@@ -12,7 +12,7 @@ if (typing) {
 
     function typeEffect() {
         if (index < text.length) {
-            typing.textContent += text.charAt(index);
+            typing.innerHTML = text.slice(0, index);
             index++;
             setTimeout(typeEffect, 100);
         }
