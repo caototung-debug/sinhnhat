@@ -22,32 +22,32 @@ if (typing) {
 
 
    /* ==========================================
-    3. CLICK HỘP QUÀ: RÚT DÂY + CHÓI SÁNG + CHUYỂN TRANG
-========================================== */
-const gift = document.getElementById("gift");
-const flashScreen = document.querySelector(".flash-screen");
+        CLICK HỘP QUÀ: RÚT DÂY ➔ SÁNG NHÈ NHẸ ➔ CHUYỂN TRANG
+    ========================================== */
+    const giftContainer = document.getElementById("gift");
+    const flashScreen = document.querySelector(".flash-screen");
 
-if (gift) {
-    gift.addEventListener("click", () => {
-        // Tránh click nhiều lần
-        if (gift.classList.contains("open")) return;
+    if (giftContainer) {
+        giftContainer.addEventListener("click", () => {
+            // Tránh click nhiều lần
+            if (giftContainer.classList.contains("open")) return;
 
-        // Bước 1: Bung dây ruy-băng & bật nắp hộp quà
-        gift.classList.add("open");
+            // BƯỚC 1: Kích hoạt hiệu ứng rút dây + bật nắp hộp quà ngay lập tức
+            giftContainer.classList.add("open");
 
-        // Bước 2: Sau 0.5s hộp mở, bừng sáng chói màn hình
-        setTimeout(() => {
-            if (flashScreen) {
-                flashScreen.classList.add("active");
-            }
-        }, 500);
+            // BƯỚC 2: Đợi 0.6s cho dây rút và nắp mở xong, bắt đầu tỏa ánh sáng nhè nhẹ
+            setTimeout(() => {
+                if (flashScreen) {
+                    flashScreen.classList.add("active");
+                }
+            }, 600);
 
-        // Bước 3: Khi màn hình đã trắng chói hoàn toàn (sau 1.3s), tiến hành chuyển trang
-        setTimeout(() => {
-            window.location.href = "nhungloidan.html";
-        }, 1300);
-    });
-}
+            // BƯỚC 3: Đợi ánh sáng lan tỏa nhẹ nhàng phủ kín màn hình (sau 1.8s) mới chuyển trang
+            setTimeout(() => {
+                window.location.href = "nhungloidan.html";
+            }, 1800);
+        });
+    }
 
 
     /* ==========================================
