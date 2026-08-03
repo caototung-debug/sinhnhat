@@ -55,8 +55,8 @@ const giftContainer = document.getElementById("gift");
 
 setTimeout(()=>{
 
-
-    giftContainer.classList.add("show");
+    document.getElementById("gift")
+    .classList.add("show");
 
 
 },5000);
