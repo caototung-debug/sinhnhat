@@ -341,29 +341,30 @@ body{
 
 .forest::after{
 
-
     content:"";
 
-
     position:absolute;
-
 
     inset:0;
 
 
     background:
 
-
     repeating-linear-gradient(
         90deg,
-        #020617 0px,
-        #020617 30px,
-        transparent 30px,
-        transparent 80px
+        rgba(0,0,0,.8) 0px,
+        rgba(0,0,0,.8) 20px,
+        transparent 20px,
+        transparent 70px
     );
 
 
-    opacity:.8;
+    clip-path:polygon(
+        0 0,
+        100% 20%,
+        100% 100%,
+        0 100%
+    );
 
 
 }
@@ -379,18 +380,15 @@ body{
 
 .flowers{
 
-
     position:absolute;
 
+    bottom:20px;
 
-    bottom:0;
+    width:350px;
 
+    height:350px;
 
-    width:320px;
-
-
-    height:300px;
-
+    z-index:10;
 
 }
 
