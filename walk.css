@@ -94,180 +94,39 @@ body {
     z-index: 5;
 }
 
-/* ================= VƯỜN HOA & RỪNG 3 LỚP (NAVY & CYAN) ================= */
+/* ================= VƯỜN HOA CẨM TÚ CẦU SVG ================= */
 .hydrangea-field {
     position: absolute;
-    bottom: -10px;
+    bottom: -20px;
     left: 0;
     width: 100%;
-    height: 480px; /* Độ cao đủ lớn bao phủ không gian */
+    height: 100%;
     pointer-events: none;
     z-index: 25;
+    overflow: hidden;
 }
 
-/* 1. TÁN CÂY / BỤI NỀN TỐI TẠO KHUNG RỪNG */
-.dark-bush {
+.flower-bush {
     position: absolute;
     bottom: 0;
-    background: #061126;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 20px #020617);
+    width: 500px; /* Tăng kích thước bụi hoa */
+    height: 500px;
 }
 
-.left-dark {
-    width: 500px;
-    height: 420px;
-    left: -120px;
-    bottom: -50px;
+.left-bush {
+    left: -50px;
+    animation: bushSway 6s infinite ease-in-out alternate;
 }
 
-.right-dark {
-    width: 520px;
-    height: 440px;
-    right: -130px;
-    bottom: -50px;
+.right-bush {
+    right: -50px;
+    animation: bushSway 6s infinite ease-in-out alternate-reverse;
 }
 
-/* 2. CỤM HOA CHÍNH (TO, PHÁT SÁNG VƯƠN CAO) */
-.flower-cluster {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-}
-
-.flower-cluster::before,
-.flower-cluster::after,
-.small-cluster::before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 22px rgba(147, 197, 253, 0.85));
-}
-
-/* Bụi hoa to bên trái */
-.left-field {
-    left: 0;
-    width: 450px;
-}
-
-.left-field::before {
-    width: 360px;
-    height: 290px;
-    bottom: 30px;
-    left: -30px;
-    background: 
-        radial-gradient(circle at 30% 30%, #ffffff 0%, #60a5fa 15%, transparent 35%),
-        radial-gradient(circle at 65% 35%, #bfdbfe 0%, #2563eb 18%, transparent 40%),
-        radial-gradient(circle at 45% 65%, #93c5fd 0%, #1d4ed8 20%, transparent 45%),
-        radial-gradient(circle at 80% 70%, #60a5fa 0%, #1e40af 18%, transparent 40%),
-        #1e3a8a;
-}
-
-.left-field::after {
-    width: 280px;
-    height: 230px;
-    bottom: 140px;
-    left: 120px;
-    background: 
-        radial-gradient(circle at 35% 35%, #ffffff 0%, #38bdf8 18%, transparent 38%),
-        radial-gradient(circle at 65% 60%, #bfdbfe 0%, #1d4ed8 20%, transparent 45%),
-        #172554;
-}
-
-/* Bụi hoa to bên phải */
-.right-field {
-    right: 0;
-    width: 450px;
-}
-
-.right-field::before {
-    width: 380px;
-    height: 310px;
-    bottom: 20px;
-    right: -20px;
-    background: 
-        radial-gradient(circle at 40% 30%, #ffffff 0%, #2563eb 18%, transparent 38%),
-        radial-gradient(circle at 70% 40%, #bfdbfe 0%, #1d4ed8 18%, transparent 40%),
-        radial-gradient(circle at 30% 70%, #60a5fa 0%, #1e40af 22%, transparent 45%),
-        #1e3a8a;
-}
-
-.right-field::after {
-    width: 290px;
-    height: 240px;
-    bottom: 150px;
-    right: 130px;
-    background: 
-        radial-gradient(circle at 30% 40%, #ffffff 0%, #38bdf8 18%, transparent 38%),
-        radial-gradient(circle at 70% 30%, #93c5fd 0%, #1240a8 20%, transparent 45%),
-        #172554;
-}
-
-/* 3. BỤI HOA PHỤ NẰM SÁT CON ĐƯỜNG (LẤP KHOẢNG TRỐNG) */
-.small-cluster {
-    position: absolute;
-    bottom: 0;
-    width: 200px;
-    height: 200px;
-}
-
-.left-mid {
-    left: 220px;
-    bottom: 10px;
-}
-
-.left-mid::before {
-    width: 200px;
-    height: 160px;
-    bottom: 10px;
-    left: 0;
-    background: 
-        radial-gradient(circle at 50% 40%, #e0f2fe 0%, #2563eb 20%, transparent 45%),
-        #1e3a8a;
-}
-
-.right-mid {
-    right: 230px;
-    bottom: 10px;
-}
-
-.right-mid::before {
-    width: 210px;
-    height: 170px;
-    bottom: 10px;
-    right: 0;
-    background: 
-        radial-gradient(circle at 40% 40%, #e0f2fe 0%, #2563eb 20%, transparent 45%),
-        #1e3a8a;
-}
-
-/* ================= NỘI DUNG / TEXT ================= */
-.content {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-    z-index: 30;
-}
-
-.content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    letter-spacing: 3px;
-    color: #f0f6ff;
-    text-shadow: 
-        0 0 15px rgba(142, 197, 255, 0.6),
-        0 0 35px rgba(80, 140, 255, 0.4);
-}
-
-.content p {
-    margin-top: 12px;
-    color: #b0d0ff;
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 1px;
+/* Đung đung nhẹ như trong gió */
+@keyframes bushSway {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(1.5deg); }
 }
 
 /* ================= LOADING ================= */
